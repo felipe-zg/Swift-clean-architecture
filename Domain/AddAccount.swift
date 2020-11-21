@@ -5,7 +5,7 @@ public protocol AddAccount{
 }
 
 
-public struct AddAccountModel{
+public struct AddAccountModel: Encodable{
     public var name: String
     public var email: String
     public var password: String
