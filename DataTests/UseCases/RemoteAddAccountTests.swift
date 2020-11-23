@@ -25,11 +25,26 @@ class RemoteAddAccountTests: XCTestCase {
         sut.add(addAccountModel: makeAddAccountModel()) { result in
             switch result {
             case .failure(let error): XCTAssertEqual(error, .unexpected)
-            case .success: XCTFail("expected error result \(result) instead")
+            case .success: XCTFail("expected error but received \(result) instead")
             }
             exp.fulfill()
         }
         httpPostClientSpy.completeWithError(.noConectivity)
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_add_should_complete_with_AccountModel_if_client_succeeds(){
+        let (sut, httpPostClientSpy) = makeSut()
+        let expectedAccount = makeAccountModel()
+        let exp = expectation(description: "waiting")
+        sut.add(addAccountModel: makeAddAccountModel()) { result in
+            switch result {
+            case .failure: XCTFail("expected success but received \(result) instead")
+            case .success(let receivedAccount):  XCTAssertEqual(receivedAccount, expectedAccount)
+            }
+            exp.fulfill()
+        }
+        httpPostClientSpy.completeWithData(expectedAccount.toData()!)
         wait(for: [exp], timeout: 1)
     }
 
@@ -39,6 +54,10 @@ extension RemoteAddAccountTests {
     
     func makeAddAccountModel() -> AddAccountModel{
         return AddAccountModel(name: "any_name", email: "any_email", password: "any_password", passwordConfirmation: "any_passoword")
+    }
+
+    func makeAccountModel() -> AccountModel{
+        return AccountModel(id: "any_id", name: "any_name", email: "any_email", password: "any_password")
     }
     
     func makeSut(url: URL = URL(string: "https://any.url.com/api")!) -> (sut: RemoteAddAccount, httpPostClientSpy: HttpPostClientSpy) {
@@ -61,6 +80,10 @@ extension RemoteAddAccountTests {
         
         func completeWithError(_ error: HttpError){
             completion?(.failure(error))
+        }
+        
+        func completeWithData(_ data: Data){
+            completion?(.success(data))
         }
     }
     

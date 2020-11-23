@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		320324AD256B426E0014E757 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320324AC256B426E0014E757 /* DomainError.swift */; };
+		3211F9F9256B9B0A0026F56D /* ExtentionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		3264876F2569A62B006B5B74 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264876E2569A62B006B5B74 /* AddAccount.swift */; };
 		326487722569A63F006B5B74 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326487712569A63F006B5B74 /* AccountModel.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		320324AC256B426E0014E757 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionHelpers.swift; sourceTree = "<group>"; };
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		3264875C2569A4B1006B5B74 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264875F2569A4B1006B5B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3211F9F7256B9AF40026F56D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		321F397D256B047E00E4A3ED /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		3264877A2569A6F6006B5B74 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3211F9F7256B9AF40026F56D /* Helpers */,
 				326487B5256A3B7B006B5B74 /* UseCases */,
 				326487B8256A3B87006B5B74 /* Http */,
 				3264877C2569A6F6006B5B74 /* Info.plist */,
@@ -371,6 +382,7 @@
 			files = (
 				321F3984256B061E00E4A3ED /* HttpError.swift in Sources */,
 				326487B2256A3AD1006B5B74 /* HttpPostClient.swift in Sources */,
+				3211F9F9256B9B0A0026F56D /* ExtentionHelpers.swift in Sources */,
 				326487AE256A3A93006B5B74 /* RemoteAddAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
