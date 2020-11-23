@@ -5,7 +5,7 @@ import Data
 class RemoteAddAccountTests: XCTestCase {
    
     func test_add_should_call_httpPostClient_only_once_and_with_correct_url(){
-        let url = URL(string: "https://any.url.com/api")!
+        let url = makeURL()
         let addAccountModel = makeAddAccountModel()
         let (sut, httpPostClientSpy) = makeSut(url: url)
         sut.add(addAccountModel: addAccountModel) {_ in}
@@ -37,7 +37,7 @@ class RemoteAddAccountTests: XCTestCase {
     func test_add_should_complete_with_DomainError_if_client_completes_with_invalid_data(){
         let (sut, httpPostClientSpy) = makeSut()
         expect(sut, completeWith: .failure(.unexpected), when: {
-            httpPostClientSpy.completeWithData(Data("invalid_data".utf8))
+            httpPostClientSpy.completeWithData(makeInvalidData())
         })
     }
 
@@ -65,6 +65,14 @@ extension RemoteAddAccountTests {
 
     func makeAccountModel() -> AccountModel{
         return AccountModel(id: "any_id", name: "any_name", email: "any_email", password: "any_password")
+    }
+    
+    func makeURL() -> URL {
+        return URL(string: "https://any.url.com/api")!
+    }
+    
+    func makeInvalidData() -> Data {
+        return Data("invalid_data".utf8)
     }
     
     func makeSut(url: URL = URL(string: "https://any.url.com/api")!) -> (sut: RemoteAddAccount, httpPostClientSpy: HttpPostClientSpy) {
