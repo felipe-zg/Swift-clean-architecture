@@ -40,6 +40,8 @@ class RemoteAddAccountTests: XCTestCase {
             httpPostClientSpy.completeWithData(makeInvalidData())
         })
     }
+    
+
 
 }
 
@@ -75,10 +77,18 @@ extension RemoteAddAccountTests {
         return Data("invalid_data".utf8)
     }
     
-    func makeSut(url: URL = URL(string: "https://any.url.com/api")!) -> (sut: RemoteAddAccount, httpPostClientSpy: HttpPostClientSpy) {
+    func makeSut(url: URL = URL(string: "https://any.url.com/api")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteAddAccount, httpPostClientSpy: HttpPostClientSpy) {
         let httpPostClientSpy = HttpPostClientSpy()
         let sut = RemoteAddAccount(url: url, httpPostClient: httpPostClientSpy)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        checkMemoryLeak(for: httpPostClientSpy, file: file, line: line)
         return (sut, httpPostClientSpy)
+    }
+    
+    func checkMemoryLeak(for instance: AnyObject, file: StaticString = #file, line: UInt = #line){
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, file: file, line: line)
+        }
     }
     
     
