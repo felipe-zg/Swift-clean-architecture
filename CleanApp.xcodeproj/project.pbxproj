@@ -19,6 +19,10 @@
 		326487A1256A106B006B5B74 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326487A0256A106B006B5B74 /* Model.swift */; };
 		326487AE256A3A93006B5B74 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326487AD256A3A93006B5B74 /* RemoteAddAccount.swift */; };
 		326487B2256A3AD1006B5B74 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326487B1256A3AD1006B5B74 /* HttpPostClient.swift */; };
+		328FA85D256ECADE003BC229 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA85C256ECADE003BC229 /* TestFactories.swift */; };
+		328FA863256ECBEC003BC229 /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
+		328FA867256ECDBE003BC229 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA866256ECDBE003BC229 /* AccountModelFactory.swift */; };
+		328FA86E256ECE38003BC229 /* HttpPostClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA86D256ECE38003BC229 /* HttpPostClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		326487A0256A106B006B5B74 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		326487AD256A3A93006B5B74 /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		326487B1256A3AD1006B5B74 /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		328FA85C256ECADE003BC229 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		328FA862256ECBEC003BC229 /* TestExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtentions.swift; sourceTree = "<group>"; };
+		328FA866256ECDBE003BC229 /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
+		328FA86D256ECE38003BC229 /* HttpPostClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +164,9 @@
 		3264877A2569A6F6006B5B74 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3211F9F7256B9AF40026F56D /* Helpers */,
 				326487B5256A3B7B006B5B74 /* UseCases */,
 				326487B8256A3B87006B5B74 /* Http */,
+				3211F9F7256B9AF40026F56D /* Helpers */,
 				3264877C2569A6F6006B5B74 /* Info.plist */,
 			);
 			path = Data;
@@ -168,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				326487A8256A3A6C006B5B74 /* UseCases */,
+				328FA86C256ECE13003BC229 /* Http */,
+				328FA85B256ECA1B003BC229 /* Helpers */,
 				326487882569A6F6006B5B74 /* Info.plist */,
 			);
 			path = DataTests;
@@ -218,6 +228,24 @@
 			children = (
 				321F3982256B060800E4A3ED /* Errors */,
 				326487B1256A3AD1006B5B74 /* HttpPostClient.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		328FA85B256ECA1B003BC229 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				328FA85C256ECADE003BC229 /* TestFactories.swift */,
+				328FA862256ECBEC003BC229 /* TestExtentions.swift */,
+				328FA866256ECDBE003BC229 /* AccountModelFactory.swift */,
+				328FA86D256ECE38003BC229 /* HttpPostClientSpy.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		328FA86C256ECE13003BC229 /* Http */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -391,7 +419,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328FA85D256ECADE003BC229 /* TestFactories.swift in Sources */,
+				328FA86E256ECE38003BC229 /* HttpPostClientSpy.swift in Sources */,
 				326487872569A6F6006B5B74 /* RemoteAddAccountTests.swift in Sources */,
+				328FA867256ECDBE003BC229 /* AccountModelFactory.swift in Sources */,
+				328FA863256ECBEC003BC229 /* TestExtentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
