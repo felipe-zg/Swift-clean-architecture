@@ -10,6 +10,7 @@
 		320324AD256B426E0014E757 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320324AC256B426E0014E757 /* DomainError.swift */; };
 		3208D009256FC188003858DE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3208D008256FC188003858DE /* Alamofire */; };
 		3211F9F9256B9B0A0026F56D /* ExtentionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */; };
+		321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		3264876F2569A62B006B5B74 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264876E2569A62B006B5B74 /* AddAccount.swift */; };
 		326487722569A63F006B5B74 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326487712569A63F006B5B74 /* AccountModel.swift */; };
@@ -589,6 +590,7 @@
 			files = (
 				329D6975256FB9C20050F70B /* TestFactories.swift in Sources */,
 				328FA888256ECF87003BC229 /* AlamofireAdapterTests.swift in Sources */,
+				321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
