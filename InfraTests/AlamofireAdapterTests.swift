@@ -36,17 +36,7 @@ class AlamofireAdapterTests: XCTestCase {
     }
     
     func test_post_should_complete_with_error_whrn_request_completes_with_error() throws {
-        let sut = makeSut()
-        UrlProtocolStub.simulate(data: nil, response: nil, error: makeError())
-        let exp = expectation(description: "waiting test")
-        sut.post(to: makeURL(), with: makeValidData()) { (result) in
-            switch result {
-            case .failure(let error): XCTAssertEqual(error, .noConectivity)
-            case .success: XCTFail("expected error but received \(result) instead")
-            }
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1)
+        expectResult(.failure(.noConectivity), when: (data: nil, response: nil, error: makeError())   )
     }
 }
 
