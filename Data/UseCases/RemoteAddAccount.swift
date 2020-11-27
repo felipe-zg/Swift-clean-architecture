@@ -1,7 +1,7 @@
 import Foundation
 import Domain
 
-public class RemoteAddAccount{
+public class RemoteAddAccount: AddAccount{
     private let url: URL
     private let httpPostClient: HttpPostClient
     
@@ -17,7 +17,7 @@ public class RemoteAddAccount{
             switch result {
             case .failure:  completion(.failure(.unexpected))
             case .success(let data):
-                if let model: AccountModel = data.toModel() {
+                if let model: AccountModel = data?.toModel() {
                     completion(.success(model))
                 } else {
                     completion(.failure(.unexpected))
