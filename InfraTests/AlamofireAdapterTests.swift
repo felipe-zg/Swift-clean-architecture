@@ -11,6 +11,9 @@ class AlamofireAdapter{
     
     func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void){
         session.request(url, method: .post, parameters: data?.toJSON(), encoding: JSONEncoding.default).responseData { (dataResponse) in
+            guard let _ = dataResponse.response?.statusCode else {
+                return completion(.failure(.noConectivity))
+            }
             switch dataResponse.result {
             case .failure: completion(.failure(.noConectivity))
             case .success: break
@@ -35,8 +38,17 @@ class AlamofireAdapterTests: XCTestCase {
         }
     }
     
-    func test_post_should_complete_with_error_whrn_request_completes_with_error() throws {
+    func test_post_should_complete_with_error_when_request_completes_with_error() throws {
         expectResult(.failure(.noConectivity), when: (data: nil, response: nil, error: makeError())   )
+    }
+    
+    func test_post_should_complete_with_error_on_all_invalid_cases() throws {
+        expectResult(.failure(.noConectivity), when: (data: makeValidData(), response: makeHttpResponse(), error: makeError())   )
+        expectResult(.failure(.noConectivity), when: (data: makeValidData(), response: nil, error: makeError())   )
+        expectResult(.failure(.noConectivity), when: (data: makeValidData(), response: nil, error: nil)   )
+        expectResult(.failure(.noConectivity), when: (data: nil, response: makeHttpResponse(), error: makeError())   )
+        expectResult(.failure(.noConectivity), when: (data: nil, response: makeHttpResponse(), error: nil)   )
+        expectResult(.failure(.noConectivity), when: (data: nil, response: nil, error: nil)   )
     }
 }
 
@@ -61,15 +73,15 @@ extension AlamofireAdapterTests {
         action(request!)
     }
     
-    func expectResult(_ expectedResult: Result<Data, HttpError>, when stub: (data: Data?, response: HTTPURLResponse?, error: Error?)) {
+    func expectResult(_ expectedResult: Result<Data, HttpError>, when stub: (data: Data?, response: HTTPURLResponse?, error: Error?),  file: StaticString = #filePath, line: UInt = #line) {
         let sut = makeSut()
         UrlProtocolStub.simulate(data: stub.data, response: stub.response, error: stub.error)
         let exp = expectation(description: "waiting test")
         sut.post(to: makeURL(), with: makeValidData()) { (receivedResult) in
             switch(expectedResult, receivedResult){
-            case (.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError)
-            case (.success(let expectedData), .success(let receivedData)): XCTAssertEqual(expectedData, receivedData)
-            default: XCTFail("expected \(expectedResult) but received \(receivedResult)")
+            case (.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+            case (.success(let expectedData), .success(let receivedData)): XCTAssertEqual(expectedData, receivedData, file: file, line: line)
+            default: XCTFail("expected \(expectedResult) but received \(receivedResult)", file: file, line: line)
             }
             exp.fulfill()
         }
