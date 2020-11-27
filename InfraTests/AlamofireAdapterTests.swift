@@ -11,12 +11,24 @@ class AlamofireAdapter{
     
     func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void){
         session.request(url, method: .post, parameters: data?.toJSON(), encoding: JSONEncoding.default).responseData { (dataResponse) in
-            guard let _ = dataResponse.response?.statusCode else {
+            guard let statusCode = dataResponse.response?.statusCode else {
                 return completion(.failure(.noConectivity))
             }
             switch dataResponse.result {
             case .failure: completion(.failure(.noConectivity))
-            case .success: break
+            case .success:
+                switch statusCode {
+                case 401:
+                    completion(.failure(.unauthorized))
+                case 403:
+                    completion(.failure(.forbidden))
+                case 400...499:
+                    completion(.failure(.badRequest))
+                case 500...599:
+                    completion(.failure(.serverError))
+                default:
+                    completion(.failure(.noConectivity))
+                }
             }
         }
     }
@@ -49,6 +61,17 @@ class AlamofireAdapterTests: XCTestCase {
         expectResult(.failure(.noConectivity), when: (data: nil, response: makeHttpResponse(), error: makeError())   )
         expectResult(.failure(.noConectivity), when: (data: nil, response: makeHttpResponse(), error: nil)   )
         expectResult(.failure(.noConectivity), when: (data: nil, response: nil, error: nil)   )
+    }
+    
+    func test_post_should_complete_with_error_when_request_completes_with_non_200() throws {
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 400), error: nil)   )
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 450), error: nil)   )
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 499), error: nil)   )
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 500), error: nil)   )
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 550), error: nil)   )
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 599), error: nil)   )
+        expectResult(.failure(.unauthorized), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 401), error: nil)   )
+        expectResult(.failure(.forbidden), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 403), error: nil)   )
     }
 }
 
