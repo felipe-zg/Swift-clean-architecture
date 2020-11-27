@@ -16,8 +16,10 @@ class AlamofireAdapter{
             }
             switch dataResponse.result {
             case .failure: completion(.failure(.noConectivity))
-            case .success:
+            case .success(let data):
                 switch statusCode {
+                case 200:
+                    completion(.success(data))
                 case 401:
                     completion(.failure(.unauthorized))
                 case 403:
@@ -72,6 +74,10 @@ class AlamofireAdapterTests: XCTestCase {
         expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 599), error: nil)   )
         expectResult(.failure(.unauthorized), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 401), error: nil)   )
         expectResult(.failure(.forbidden), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 403), error: nil)   )
+    }
+    
+    func test_post_should_complete_with_data_when_request_completes_with_200() throws {
+        expectResult(.success(makeValidData()), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 200), error: nil)   )
     }
 }
 
