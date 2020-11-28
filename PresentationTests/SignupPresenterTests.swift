@@ -15,6 +15,8 @@ class SignUpPresenter {
             alertiView.showMessage(AlertViewModel(title: "Required field", message: "Email is required"))
         } else if viewModel.password == nil || viewModel.password!.isEmpty {
             alertiView.showMessage(AlertViewModel(title: "Required field", message: "Password is required"))
+        } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
+            alertiView.showMessage(AlertViewModel(title: "Required field", message: "Password confirmation is required"))
         }
     }
 }
@@ -56,6 +58,14 @@ class SignUpPresenterTests: XCTestCase {
         sut.signUp(viewModel: signUpViewModel)
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Required field", message: "Password is required"))
     }
+    
+    func test_signUp_should_show_error_message_if_passwordConfirmation_is_not_provided() throws {
+        let (sut, alertViewSpy) = makeSut()
+        let signUpViewModel = SignUpViewModel(name: "felipe", email: "felipe@gmail.com", password: "my_password")
+        sut.signUp(viewModel: signUpViewModel)
+        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Required field", message: "Password confirmation is required"))
+    }
+    
 }
 
 extension SignUpPresenterTests {
