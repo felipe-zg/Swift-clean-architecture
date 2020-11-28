@@ -11,6 +11,8 @@ class SignUpPresenter {
     func signUp(viewModel: SignUpViewModel) {
         if viewModel.name == nil || viewModel.name!.isEmpty {
             alertiView.showMessage(AlertViewModel(title: "Required field", message: "Name is required"))
+        } else if viewModel.email == nil || viewModel.email!.isEmpty {
+            alertiView.showMessage(AlertViewModel(title: "Required field", message: "Email is required"))
         }
     }
 }
@@ -34,9 +36,16 @@ struct SignUpViewModel {
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() throws {
         let (sut, alertViewSpy) = makeSut()
-        let signUpViewModel = SignUpViewModel(email: "felipe", password: "my_password", passwordConfirmation: "my_password")
+        let signUpViewModel = SignUpViewModel(email: "felipe@gamil.com", password: "my_password", passwordConfirmation: "my_password")
         sut.signUp(viewModel: signUpViewModel)
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Required field", message: "Name is required"))
+    }
+    
+    func test_signUp_should_show_error_message_if_email_is_not_provided() throws {
+        let (sut, alertViewSpy) = makeSut()
+        let signUpViewModel = SignUpViewModel(name: "felipe", password: "my_password", passwordConfirmation: "my_password")
+        sut.signUp(viewModel: signUpViewModel)
+        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Required field", message: "Email is required"))
     }
 }
 
