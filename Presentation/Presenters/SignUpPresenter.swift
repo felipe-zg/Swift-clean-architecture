@@ -26,8 +26,9 @@ public final class SignUpPresenter {
             return "Password confirmation is required"
         } else if viewModel.password! != viewModel.passwordConfirmation! {
             return "Passwords are not equal"
+        } else if !emailValidator.isValid(email: viewModel.email!){
+            return "Email is invalid"
         }
-        _ = emailValidator.isValid(email: viewModel.email!)
         return nil
     }
 }

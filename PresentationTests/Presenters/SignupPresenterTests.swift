@@ -5,40 +5,35 @@ class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
-        let signUpViewModel = SignUpViewModel(email: "felipe@gamil.com", password: "my_password", passwordConfirmation: "my_password")
-        sut.signUp(viewModel: signUpViewModel)
+        sut.signUp(viewModel: makeSignUpModel(name: nil))
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Validation failed", message: "Name is required"))
     }
     
     func test_signUp_should_show_error_message_if_email_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
-        let signUpViewModel = SignUpViewModel(name: "felipe", password: "my_password", passwordConfirmation: "my_password")
-        sut.signUp(viewModel: signUpViewModel)
+        sut.signUp(viewModel: makeSignUpModel(email: nil))
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Validation failed", message: "Email is required"))
     }
     
     func test_signUp_should_show_error_message_if_password_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
-        let signUpViewModel = SignUpViewModel(name: "felipe", email: "felipe@gmail.com", passwordConfirmation: "my_password")
-        sut.signUp(viewModel: signUpViewModel)
+        sut.signUp(viewModel: makeSignUpModel(password: nil))
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Validation failed", message: "Password is required"))
     }
     
     func test_signUp_should_show_error_message_if_passwordConfirmation_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
-        let signUpViewModel = SignUpViewModel(name: "felipe", email: "felipe@gmail.com", password: "my_password")
-        sut.signUp(viewModel: signUpViewModel)
+        sut.signUp(viewModel: makeSignUpModel(passwordConfirmation: nil))
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Validation failed", message: "Password confirmation is required"))
     }
     
     func test_signUp_should_show_error_message_if_password_and_passwordConfirmation_does_not_match() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
-        let signUpViewModel = SignUpViewModel(name: "felipe", email: "felipe@gmail.com", password: "my_password", passwordConfirmation: "my_pass")
-        sut.signUp(viewModel: signUpViewModel)
+        sut.signUp(viewModel: makeSignUpModel(passwordConfirmation: "wrong_password"))
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Validation failed", message: "Passwords are not equal"))
     }
     
@@ -49,12 +44,25 @@ class SignUpPresenterTests: XCTestCase {
         sut.signUp(viewModel: signUpViewModel)
         XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email)
     }
+    
+    func test_signUp_should_show_error_message_if_email_is_invalid() throws {
+        let alertViewSpy = AlertViewSpy()
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = makeSut(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
+        emailValidatorSpy.simulateInvalidEmail()
+        sut.signUp(viewModel: makeSignUpModel())
+        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Validation failed", message: "Email is invalid"))
+    }
 }
 
 extension SignUpPresenterTests {
     func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter{
         let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
         return sut
+    }
+    
+    func makeSignUpModel(name: String? = "test_name", email: String? = "test_email@email.com", password: String? = "test_password", passwordConfirmation: String? = "test_password") -> SignUpViewModel {
+        return SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
     }
     
     class AlertViewSpy: AlertView {
