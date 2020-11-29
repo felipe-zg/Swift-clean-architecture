@@ -1,7 +1,7 @@
 import Foundation
 
 public final class SignUpPresenter {
-    public  let alertiView: AlertView
+    private  let alertiView: AlertView
     private let emailValidator: EmailValidator
     
     public init(alertView: AlertView, emailValidator: EmailValidator) {
@@ -27,6 +27,7 @@ public final class SignUpPresenter {
         } else if viewModel.password! != viewModel.passwordConfirmation! {
             return "Passwords are not equal"
         }
+        _ = emailValidator.isValid(email: viewModel.email!)
         return nil
     }
 }
