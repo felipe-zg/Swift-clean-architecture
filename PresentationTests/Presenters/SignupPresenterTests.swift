@@ -1,5 +1,7 @@
 import XCTest
 import Presentation
+import Domain
+import Data
 
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() throws {
@@ -53,15 +55,22 @@ class SignUpPresenterTests: XCTestCase {
         sut.signUp(viewModel: makeSignUpModel())
         XCTAssertEqual(alertViewSpy.viewModel, makeInvalidFieldAlertViewModelFor(field: "Email"))
     }
+    
+    func test_signUp_should_call_addAccount_with_correct_values() throws {
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(addAccountSpy: addAccountSpy)
+        sut.signUp(viewModel: makeSignUpModel())
+        XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
+    }
 }
 
 extension SignUpPresenterTests {
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy()) -> SignUpPresenter{
-        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy(), addAccountSpy: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter{
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccountSpy)
         return sut
     }
     
-    func makeSignUpModel(name: String? = "test_name", email: String? = "test_email@email.com", password: String? = "test_password", passwordConfirmation: String? = "test_password") -> SignUpViewModel {
+    func makeSignUpModel(name: String? = "any_name", email: String? = "any_email@email.com", password: String? = "any_password", passwordConfirmation: String? = "any_password") -> SignUpViewModel {
         return SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
     }
     
@@ -93,6 +102,16 @@ extension SignUpPresenterTests {
         func simulateInvalidEmail() {
             self.isValid = false
         }
+    }
+    
+    class AddAccountSpy: AddAccount {
+        var addAccountModel: AddAccountModel?
+        
+        func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+            self.addAccountModel = addAccountModel
+        }
+        
+        
     }
 }
 

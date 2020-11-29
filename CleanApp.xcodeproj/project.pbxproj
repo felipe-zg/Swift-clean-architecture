@@ -42,6 +42,7 @@
 		329E32FF2573278A00858506 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3264875C2569A4B1006B5B74 /* Domain.framework */; };
 		329E33002573278A00858506 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3264875C2569A4B1006B5B74 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		32E03AD82571286300C66DDE /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E03AD72571286300C66DDE /* AlamofireAdapter.swift */; };
+		32EFE2572573F89A00E10B19 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA866256ECDBE003BC229 /* AccountModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -855,6 +856,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32EFE2572573F89A00E10B19 /* AccountModelFactory.swift in Sources */,
 				324CA32825727B430044F94F /* SignupPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
