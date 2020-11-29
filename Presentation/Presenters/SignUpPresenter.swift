@@ -1,17 +1,22 @@
 import Foundation
+import Domain
 
 public final class SignUpPresenter {
     private  let alertiView: AlertView
     private let emailValidator: EmailValidator
+    let addAccount: AddAccount
     
-    public init(alertView: AlertView, emailValidator: EmailValidator) {
+    public init(alertView: AlertView, emailValidator: EmailValidator, addAccount: AddAccount) {
         self.alertiView = alertView
         self.emailValidator = emailValidator
+        self.addAccount = addAccount
     }
     
     public func signUp(viewModel: SignUpViewModel) {
         if let alertModel = validate(viewModel: viewModel) {
             alertiView.showMessage(alertModel)
+        } else {
+            addAccount.add(addAccountModel: AddAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)) { _ in}
         }
     }
     
