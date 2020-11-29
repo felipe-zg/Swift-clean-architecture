@@ -7,36 +7,61 @@ class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Name"))
+            exp.fulfill()
+        }
         sut.signUp(viewModel: makeSignUpModel(name: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredFieldAlertViewModelFor(field: "Name"))
+        wait(for: [exp], timeout: 1)
     }
     
     func test_signUp_should_show_error_message_if_email_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Email"))
+            exp.fulfill()
+        }
         sut.signUp(viewModel: makeSignUpModel(email: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredFieldAlertViewModelFor(field: "Email"))
+        wait(for: [exp], timeout: 1)
     }
     
     func test_signUp_should_show_error_message_if_password_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Password"))
+            exp.fulfill()
+        }
         sut.signUp(viewModel: makeSignUpModel(password: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredFieldAlertViewModelFor(field: "Password"))
+        wait(for: [exp], timeout: 1)
     }
     
     func test_signUp_should_show_error_message_if_passwordConfirmation_is_not_provided() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Password confirmation"))
+            exp.fulfill()
+        }
         sut.signUp(viewModel: makeSignUpModel(passwordConfirmation: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeRequiredFieldAlertViewModelFor(field: "Password confirmation"))
+        wait(for: [exp], timeout: 1)
     }
     
     func test_signUp_should_show_error_message_if_password_and_passwordConfirmation_does_not_match() throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeInvalidFieldAlertViewModelFor(field: "Password confirmation"))
+            exp.fulfill()
+        }
         sut.signUp(viewModel: makeSignUpModel(passwordConfirmation: "wrong_password"))
-        XCTAssertEqual(alertViewSpy.viewModel, makeInvalidFieldAlertViewModelFor(field: "Password confirmation"))
+        wait(for: [exp], timeout: 1)
     }
     
     func test_signUp_should_call_emailValidator_withCorrect_email() throws {
@@ -51,9 +76,14 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let emailValidatorSpy = EmailValidatorSpy()
         let sut = makeSut(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeInvalidFieldAlertViewModelFor(field: "Email"))
+            exp.fulfill()
+        }
         emailValidatorSpy.simulateInvalidEmail()
         sut.signUp(viewModel: makeSignUpModel())
-        XCTAssertEqual(alertViewSpy.viewModel, makeInvalidFieldAlertViewModelFor(field: "Email"))
+        wait(for: [exp], timeout: 1)
     }
     
     func test_signUp_should_call_addAccount_with_correct_values() throws {
@@ -67,9 +97,14 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let addAccountSpy = AddAccountSpy()
         let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { [weak self] (alertViewModel) in
+            XCTAssertEqual(alertViewModel, self?.makeErrorAlertViewModelFor(message: "An unexpected error occured, please try again later"))
+            exp.fulfill()
+        }
         sut.signUp(viewModel: makeSignUpModel())
         addAccountSpy.completeWithError(.unexpected)
-        XCTAssertEqual(alertViewSpy.viewModel, makeErrorAlertViewModelFor(message: "An unexpected error occured, please try again later"))
+        wait(for: [exp], timeout: 1)
     }
 }
 
@@ -96,10 +131,14 @@ extension SignUpPresenterTests {
     }
     
     class AlertViewSpy: AlertView {
-        var viewModel: AlertViewModel?
+        var emit: ((AlertViewModel) -> Void)?
+        
+        func observe(completion: @escaping (AlertViewModel) -> Void) {
+            self.emit = completion
+        }
         
         func showMessage(_ alertViewModel: AlertViewModel) {
-            self.viewModel = alertViewModel
+            self.emit?(alertViewModel)
         }
     }
     
