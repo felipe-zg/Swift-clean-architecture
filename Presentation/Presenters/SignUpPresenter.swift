@@ -10,26 +10,34 @@ public final class SignUpPresenter {
     }
     
     public func signUp(viewModel: SignUpViewModel) {
-        if let errorMessage = validate(viewModel: viewModel) {
-            alertiView.showMessage(AlertViewModel(title: "Validation failed", message: errorMessage))
+        if let alertModel = validate(viewModel: viewModel) {
+            alertiView.showMessage(alertModel)
         }
     }
     
-    func validate(viewModel: SignUpViewModel) -> String? {
+    func validate(viewModel: SignUpViewModel) -> AlertViewModel? {
         if viewModel.name == nil || viewModel.name!.isEmpty {
-            return "Name is required"
+            return makeRequiredFieldAlertViewModelFor(field: "Name")
         } else if viewModel.email == nil || viewModel.email!.isEmpty {
-            return "Email is required"
+            return makeRequiredFieldAlertViewModelFor(field: "Email")
         } else if viewModel.password == nil || viewModel.password!.isEmpty {
-            return "Password is required"
+            return makeRequiredFieldAlertViewModelFor(field: "Password")
         } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
-            return "Password confirmation is required"
+            return makeRequiredFieldAlertViewModelFor(field: "Password confirmation")
         } else if viewModel.password! != viewModel.passwordConfirmation! {
-            return "Passwords are not equal"
+            return makeInvalidFieldAlertViewModelFor(field: "Password confirmation")
         } else if !emailValidator.isValid(email: viewModel.email!){
-            return "Email is invalid"
+            return makeInvalidFieldAlertViewModelFor(field: "Email")
         }
         return nil
+    }
+    
+    func makeRequiredFieldAlertViewModelFor(field: String) -> AlertViewModel{
+        return AlertViewModel(title: "Required field", message: "\(field) is required")
+    }
+    
+    func makeInvalidFieldAlertViewModelFor(field: String) -> AlertViewModel{
+        return AlertViewModel(title: "Invalid field", message: "\(field) is invalid")
     }
 }
 
