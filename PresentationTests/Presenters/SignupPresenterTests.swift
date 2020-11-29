@@ -58,15 +58,24 @@ class SignUpPresenterTests: XCTestCase {
     
     func test_signUp_should_call_addAccount_with_correct_values() throws {
         let addAccountSpy = AddAccountSpy()
-        let sut = makeSut(addAccountSpy: addAccountSpy)
+        let sut = makeSut(addAccount: addAccountSpy)
         sut.signUp(viewModel: makeSignUpModel())
         XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
+    }
+    
+    func test_signUp_should_show_error_message_if_addAccount_fails() throws {
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        sut.signUp(viewModel: makeSignUpModel())
+        addAccountSpy.completeWithError(.unexpected)
+        XCTAssertEqual(alertViewSpy.viewModel, makeErrorAlertViewModelFor(message: "An unexpected error occured, please try again later"))
     }
 }
 
 extension SignUpPresenterTests {
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy(), addAccountSpy: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter{
-        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccountSpy)
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy(), addAccount: AddAccountSpy = AddAccountSpy()) -> SignUpPresenter{
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount)
         return sut
     }
     
@@ -80,6 +89,10 @@ extension SignUpPresenterTests {
     
     func makeInvalidFieldAlertViewModelFor(field: String) -> AlertViewModel{
         return AlertViewModel(title: "Invalid field", message: "\(field) is invalid")
+    }
+    
+    func makeErrorAlertViewModelFor(message: String) -> AlertViewModel{
+        return AlertViewModel(title: "Error", message: message)
     }
     
     class AlertViewSpy: AlertView {
@@ -106,11 +119,16 @@ extension SignUpPresenterTests {
     
     class AddAccountSpy: AddAccount {
         var addAccountModel: AddAccountModel?
+        var completion: ((Result<AccountModel, DomainError>) -> Void)?
         
         func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
             self.addAccountModel = addAccountModel
+            self.completion = completion
         }
         
+        func completeWithError(_ error: DomainError) -> Void {
+            completion?(.failure(.unexpected))
+        }
         
     }
 }
