@@ -44,6 +44,7 @@
 		32E03AD82571286300C66DDE /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E03AD72571286300C66DDE /* AlamofireAdapter.swift */; };
 		32EFE2572573F89A00E10B19 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA866256ECDBE003BC229 /* AccountModelFactory.swift */; };
 		32EFE25D2574099300E10B19 /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
+		32EFE26425740B9000E10B19 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE26325740B9000E10B19 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,7 @@
 		329E32DE257317EC00858506 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		329E32F52573222300858506 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		32E03AD72571286300C66DDE /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
+		32EFE26325740B9000E10B19 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				329E32DE257317EC00858506 /* AlertView.swift */,
+				32EFE26325740B9000E10B19 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329E32D52573176C00858506 /* SignUpPresenter.swift in Sources */,
+				32EFE26425740B9000E10B19 /* LoadingView.swift in Sources */,
 				329E32DF257317EC00858506 /* AlertView.swift in Sources */,
 				329E32F62573222300858506 /* EmailValidator.swift in Sources */,
 			);
