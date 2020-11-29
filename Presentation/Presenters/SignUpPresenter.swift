@@ -16,8 +16,9 @@ public final class SignUpPresenter {
         if let alertModel = validate(viewModel: viewModel) {
             alertiView.showMessage(alertModel)
         } else {
-            addAccount.add(addAccountModel: AddAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)) { _result in
-                switch _result {
+            addAccount.add(addAccountModel: AddAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
                 case .failure: self.alertiView.showMessage(AlertViewModel(title: "Error", message: "An unexpected error occured, please try again later"))
                 case .success: break
                 }
