@@ -3,11 +3,13 @@ import Domain
 
 public final class SignUpPresenter {
     private  let alertiView: AlertView
+    private let loadingView: LoadingView
     private let emailValidator: EmailValidator
-    let addAccount: AddAccount
+    private let addAccount: AddAccount
     
-    public init(alertView: AlertView, emailValidator: EmailValidator, addAccount: AddAccount) {
+    public init(alertView: AlertView, loadingView: LoadingView, emailValidator: EmailValidator, addAccount: AddAccount) {
         self.alertiView = alertView
+        self.loadingView = loadingView
         self.emailValidator = emailValidator
         self.addAccount = addAccount
     }
@@ -16,6 +18,7 @@ public final class SignUpPresenter {
         if let alertModel = validate(viewModel: viewModel) {
             alertiView.showMessage(alertModel)
         } else {
+            loadingView.display(viewModel: LoadingViewModel(isLoading: true))
             addAccount.add(addAccountModel: AddAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
