@@ -47,6 +47,10 @@
 		32EFE26425740B9000E10B19 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EFE26325740B9000E10B19 /* LoadingView.swift */; };
 		32FBD17125751955001579B8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD17025751955001579B8 /* SignUpViewModel.swift */; };
 		32FBD178257519A8001579B8 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD177257519A8001579B8 /* SignUpMapper.swift */; };
+		32FBD18025751D39001579B8 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD17F25751D39001579B8 /* AlertViewSpy.swift */; };
+		32FBD18E25751D98001579B8 /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD18D25751D98001579B8 /* EmailValidatorSpy.swift */; };
+		32FBD19A25751DC5001579B8 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD19925751DC5001579B8 /* LoadingViewSpy.swift */; };
+		32FBD1A225751DF4001579B8 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +203,10 @@
 		32EFE26325740B9000E10B19 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		32FBD17025751955001579B8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		32FBD177257519A8001579B8 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
+		32FBD17F25751D39001579B8 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
+		32FBD18D25751D98001579B8 /* EmailValidatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpy.swift; sourceTree = "<group>"; };
+		32FBD19925751DC5001579B8 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
+		32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +324,9 @@
 		324CA32625727B430044F94F /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
+				32FBD1A025751DE1001579B8 /* UseCases */,
+				32FBD18C25751D82001579B8 /* Validators */,
+				32FBD18B25751D52001579B8 /* Views */,
 				329E32E625731D5A00858506 /* Presenters */,
 				324CA32925727B430044F94F /* Info.plist */,
 			);
@@ -491,7 +502,7 @@
 		329E32E625731D5A00858506 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				324CA32725727B430044F94F /* SignupPresenterTests.swift */,
+				32FBD17E25751C93001579B8 /* SignUp */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -529,6 +540,39 @@
 				32FBD177257519A8001579B8 /* SignUpMapper.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		32FBD17E25751C93001579B8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				324CA32725727B430044F94F /* SignupPresenterTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		32FBD18B25751D52001579B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32FBD17F25751D39001579B8 /* AlertViewSpy.swift */,
+				32FBD19925751DC5001579B8 /* LoadingViewSpy.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32FBD18C25751D82001579B8 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				32FBD18D25751D98001579B8 /* EmailValidatorSpy.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		32FBD1A025751DE1001579B8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -877,7 +921,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FBD18025751D39001579B8 /* AlertViewSpy.swift in Sources */,
+				32FBD1A225751DF4001579B8 /* AddAccountSpy.swift in Sources */,
 				32EFE2572573F89A00E10B19 /* AccountModelFactory.swift in Sources */,
+				32FBD19A25751DC5001579B8 /* LoadingViewSpy.swift in Sources */,
+				32FBD18E25751D98001579B8 /* EmailValidatorSpy.swift in Sources */,
 				324CA32825727B430044F94F /* SignupPresenterTests.swift in Sources */,
 				32EFE25D2574099300E10B19 /* TestExtentions.swift in Sources */,
 			);

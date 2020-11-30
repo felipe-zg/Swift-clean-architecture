@@ -170,61 +170,6 @@ extension SignUpPresenterTests {
         return AlertViewModel(title: "Success", message: message)
     }
     
-    class AlertViewSpy: AlertView {
-        var emit: ((AlertViewModel) -> Void)?
-        
-        func observe(completion: @escaping (AlertViewModel) -> Void) {
-            self.emit = completion
-        }
-        
-        func showMessage(_ alertViewModel: AlertViewModel) {
-            self.emit?(alertViewModel)
-        }
-    }
-    
-    class EmailValidatorSpy: EmailValidator {
-        var isValid = true
-        var email: String?
-        
-        func isValid(email: String) -> Bool {
-            self.email = email
-            return isValid
-        }
-        
-        func simulateInvalidEmail() {
-            self.isValid = false
-        }
-    }
-    
-    class AddAccountSpy: AddAccount {
-        var addAccountModel: AddAccountModel?
-        var completion: ((Result<AccountModel, DomainError>) -> Void)?
-        
-        func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
-            self.addAccountModel = addAccountModel
-            self.completion = completion
-        }
-        
-        func completeWithError(_ error: DomainError) -> Void {
-            completion?(.failure(.unexpected))
-        }
-        
-        func completeWithSuccess(_ accountModel: AccountModel) -> Void {
-            completion?(.success(accountModel))
-        }
-    }
-    
-    class LoadingViewSpy: LoadingView {
-        var emit: ((LoadingViewModel) -> Void)?
-        
-        func observe(completion: @escaping (LoadingViewModel) -> Void) {
-            self.emit = completion
-        }
-
-        func display(viewModel: LoadingViewModel) {
-            self.emit?(viewModel)
-        }
-    }
 }
 
 
