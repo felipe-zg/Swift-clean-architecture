@@ -22,9 +22,8 @@ public final class SignUpPresenter {
             addAccount.add(addAccountModel: AddAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
-                case .failure:
-                    self.alertiView.showMessage(AlertViewModel(title: "Error", message: "An unexpected error occured, please try again later"))
-                case .success: break
+                case .failure: self.alertiView.showMessage(AlertViewModel(title: "Error", message: "An unexpected error occured, please try again later"))
+                case .success: self.alertiView.showMessage(AlertViewModel(title: "Success", message: "Account has been created successfully"))
                 }
                 self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
             }
