@@ -123,6 +123,15 @@ class SignUpPresenterTests: XCTestCase {
         XCTAssertEqual(loadingViewSpy.viewModel, LoadingViewModel(isLoading: false))
     }
     
+    func test_signUp_should_hide_loadingView_after_addAccount_fails() throws {
+        let loadingViewSpy = LoadingViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(loadingView: loadingViewSpy, addAccount: addAccountSpy)
+        sut.signUp(viewModel: makeSignUpModel())
+        addAccountSpy.completeWithError(.unexpected)
+        XCTAssertEqual(loadingViewSpy.viewModel, LoadingViewModel(isLoading: false))
+    }
+    
 }
 
 extension SignUpPresenterTests {
