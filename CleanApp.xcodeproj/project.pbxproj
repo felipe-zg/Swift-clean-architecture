@@ -43,6 +43,10 @@
 		329E33002573278A00858506 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3264875C2569A4B1006B5B74 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		32B85D922575341F00E1799E /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B85D892575341F00E1799E /* UI.framework */; };
 		32B85D972575341F00E1799E /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B85D962575341F00E1799E /* SignUpViewControllerTests.swift */; };
+		32B85DFA257539FA00E1799E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324CA31A25727B430044F94F /* Presentation.framework */; };
+		32B85DFB257539FA00E1799E /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324CA31A25727B430044F94F /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32B85E1A25753B4E00E1799E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B85E1925753B4E00E1799E /* SignUpViewController.swift */; };
+		32B85E2225753B8000E1799E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B85E2125753B8000E1799E /* SignUp.storyboard */; };
 		32E03AD82571286300C66DDE /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E03AD72571286300C66DDE /* AlamofireAdapter.swift */; };
 		32EFE2572573F89A00E10B19 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA866256ECDBE003BC229 /* AccountModelFactory.swift */; };
 		32EFE25D2574099300E10B19 /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
@@ -134,7 +138,7 @@
 			remoteGlobalIDString = 32B85D882575341F00E1799E;
 			remoteInfo = UI;
 		};
-		32B85DA72575343F00E1799E /* PBXContainerItemProxy */ = {
+		32B85DFC257539FA00E1799E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 326487412569A48A006B5B74 /* Project object */;
 			proxyType = 1;
@@ -173,6 +177,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				329E33002573278A00858506 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32B85DFE257539FA00E1799E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				32B85DFB257539FA00E1799E /* Presentation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +236,8 @@
 		32B85D912575341F00E1799E /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B85D962575341F00E1799E /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		32B85D982575341F00E1799E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32B85E1925753B4E00E1799E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		32B85E2125753B8000E1799E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		32E03AD72571286300C66DDE /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		32EFE26325740B9000E10B19 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		32FBD17025751955001579B8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -301,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B85DFA257539FA00E1799E /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +587,8 @@
 		32B85D8A2575341F00E1799E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				32B85E1925753B4E00E1799E /* SignUpViewController.swift */,
+				32B85E2125753B8000E1799E /* SignUp.storyboard */,
 				32B85D8C2575341F00E1799E /* Info.plist */,
 			);
 			path = UI;
@@ -852,11 +872,12 @@
 				32B85D852575341F00E1799E /* Sources */,
 				32B85D862575341F00E1799E /* Frameworks */,
 				32B85D872575341F00E1799E /* Resources */,
+				32B85DFE257539FA00E1799E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				32B85DA82575343F00E1799E /* PBXTargetDependency */,
+				32B85DFD257539FA00E1799E /* PBXTargetDependency */,
 			);
 			name = UI;
 			productName = UI;
@@ -920,6 +941,7 @@
 					};
 					32B85D882575341F00E1799E = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					32B85D902575341F00E1799E = {
 						CreatedOnToolsVersion = 12.2;
@@ -1017,6 +1039,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B85E2225753B8000E1799E /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1124,6 +1147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B85E1A25753B4E00E1799E /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,10 +1217,10 @@
 			target = 32B85D882575341F00E1799E /* UI */;
 			targetProxy = 32B85D932575341F00E1799E /* PBXContainerItemProxy */;
 		};
-		32B85DA82575343F00E1799E /* PBXTargetDependency */ = {
+		32B85DFD257539FA00E1799E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 324CA31925727B430044F94F /* Presentation */;
-			targetProxy = 32B85DA72575343F00E1799E /* PBXContainerItemProxy */;
+			targetProxy = 32B85DFC257539FA00E1799E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1679,6 +1703,7 @@
 		32B85D9A2575341F00E1799E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1696,6 +1721,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1703,6 +1729,7 @@
 		32B85D9B2575341F00E1799E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1727,6 +1754,7 @@
 		32B85D9C2575341F00E1799E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = UITests/Info.plist;
@@ -1745,6 +1773,7 @@
 		32B85D9D2575341F00E1799E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = UITests/Info.plist;
