@@ -8,8 +8,8 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Name"))
+        alertViewSpy.observe {(alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeRequiredFieldAlertViewModelFor(field: "Name"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel(name: nil))
@@ -20,8 +20,8 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Email"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeRequiredFieldAlertViewModelFor(field: "Email"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel(email: nil))
@@ -32,8 +32,8 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Password"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeRequiredFieldAlertViewModelFor(field: "Password"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel(password: nil))
@@ -44,8 +44,8 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeRequiredFieldAlertViewModelFor(field: "Password confirmation"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeRequiredFieldAlertViewModelFor(field: "Password confirmation"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel(passwordConfirmation: nil))
@@ -56,8 +56,8 @@ class SignUpPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeInvalidFieldAlertViewModelFor(field: "Password confirmation"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeInvalidFieldAlertViewModelFor(field: "Password confirmation"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel(passwordConfirmation: "wrong_password"))
@@ -77,8 +77,8 @@ class SignUpPresenterTests: XCTestCase {
         let emailValidatorSpy = EmailValidatorSpy()
         let sut = makeSut(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeInvalidFieldAlertViewModelFor(field: "Email"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeInvalidFieldAlertViewModelFor(field: "Email"))
             exp.fulfill()
         }
         emailValidatorSpy.simulateInvalidEmail()
@@ -98,8 +98,8 @@ class SignUpPresenterTests: XCTestCase {
         let addAccountSpy = AddAccountSpy()
         let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeErrorAlertViewModelFor(message: "An unexpected error occured, please try again later"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeErrorAlertViewModelFor(message: "An unexpected error occured, please try again later"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel())
@@ -112,8 +112,8 @@ class SignUpPresenterTests: XCTestCase {
         let addAccountSpy = AddAccountSpy()
         let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
         let exp = expectation(description: "waiting test")
-        alertViewSpy.observe { [weak self] (alertViewModel) in
-            XCTAssertEqual(alertViewModel, self?.makeSuccessAlertViewModelFor(message: "Account has been created successfully"))
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, makeSuccessAlertViewModelFor(message: "Account has been created successfully"))
             exp.fulfill()
         }
         sut.signUp(viewModel: makeSignUpModel())
@@ -148,26 +148,6 @@ extension SignUpPresenterTests {
         let sut = SignUpPresenter(alertView: alertView, loadingView: loadingView, emailValidator: emailValidator, addAccount: addAccount)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
-    }
-    
-    func makeSignUpModel(name: String? = "any_name", email: String? = "any_email@email.com", password: String? = "any_password", passwordConfirmation: String? = "any_password") -> SignUpViewModel {
-        return SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
-    }
-    
-    func makeRequiredFieldAlertViewModelFor(field: String) -> AlertViewModel{
-        return AlertViewModel(title: "Required field", message: "\(field) is required")
-    }
-    
-    func makeInvalidFieldAlertViewModelFor(field: String) -> AlertViewModel{
-        return AlertViewModel(title: "Invalid field", message: "\(field) is invalid")
-    }
-    
-    func makeErrorAlertViewModelFor(message: String) -> AlertViewModel{
-        return AlertViewModel(title: "Error", message: message)
-    }
-    
-    func makeSuccessAlertViewModelFor(message: String) -> AlertViewModel{
-        return AlertViewModel(title: "Success", message: message)
     }
     
 }
