@@ -23,7 +23,7 @@ public final class SignUpPresenter {
                 guard let self = self else { return }
                 switch result {
                 case .failure: self.alertiView.showMessage(AlertViewModel(title: "Error", message: "An unexpected error occured, please try again later"))
-                case .success: break
+                case .success: self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
                 }
             }
         }
