@@ -107,9 +107,10 @@ class SignUpPresenterTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
-    func test_signUp_should_show_loadingView_before_calling_addAccount() throws {
+    func test_signUp_should_show_loadingView_before_and_hide_after_calling_addAccount() throws {
         let loadingViewSpy = LoadingViewSpy()
-        let sut = makeSut(loadingView: loadingViewSpy)
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(loadingView: loadingViewSpy, addAccount: addAccountSpy)
         let expectetionForBeforeCallingAddAccount = expectation(description: "wainting addAccount to be called")
         loadingViewSpy.observe { (viewModel) in
             XCTAssertEqual(viewModel, LoadingViewModel(isLoading: true))
@@ -117,27 +118,15 @@ class SignUpPresenterTests: XCTestCase {
         }
         sut.signUp(viewModel: makeSignUpModel())
         wait(for: [expectetionForBeforeCallingAddAccount], timeout: 1)
+        let expectetionForAfterCallingAddAccount = expectation(description: "wainting addAccount to be finish")
+        loadingViewSpy.observe { (viewModel) in
+            XCTAssertEqual(viewModel, LoadingViewModel(isLoading: false))
+            expectetionForAfterCallingAddAccount.fulfill()
+        }
+        addAccountSpy.completeWithError(.unexpected)
+        wait(for: [expectetionForAfterCallingAddAccount], timeout: 1)
        
     }
-    
-//    func test_signUp_should_hide_loadingView_after_addAccount_succeeds() throws {
-//        let loadingViewSpy = LoadingViewSpy()
-//        let addAccountSpy = AddAccountSpy()
-//        let sut = makeSut(loadingView: loadingViewSpy, addAccount: addAccountSpy)
-//        sut.signUp(viewModel: makeSignUpModel())
-//        addAccountSpy.completeWithSuccess(makeAccountModel())
-//        XCTAssertEqual(loadingViewSpy.viewModel, LoadingViewModel(isLoading: false))
-//    }
-//
-//    func test_signUp_should_hide_loadingView_after_addAccount_fails() throws {
-//        let loadingViewSpy = LoadingViewSpy()
-//        let addAccountSpy = AddAccountSpy()
-//        let sut = makeSut(loadingView: loadingViewSpy, addAccount: addAccountSpy)
-//        sut.signUp(viewModel: makeSignUpModel())
-//        addAccountSpy.completeWithError(.unexpected)
-//        XCTAssertEqual(loadingViewSpy.viewModel, LoadingViewModel(isLoading: false))
-//    }
-    
 }
 
 extension SignUpPresenterTests {
