@@ -114,6 +114,14 @@ class SignUpPresenterTests: XCTestCase {
         XCTAssertEqual(loadingViewSpy.viewModel, LoadingViewModel(isLoading: true))
     }
     
+    func test_signUp_should_hide_loadingView_after_addAccount_succeeds() throws {
+        let loadingViewSpy = LoadingViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(loadingView: loadingViewSpy, addAccount: addAccountSpy)
+        sut.signUp(viewModel: makeSignUpModel())
+        addAccountSpy.completeWithSuccess(makeAccountModel())
+        XCTAssertEqual(loadingViewSpy.viewModel, LoadingViewModel(isLoading: false))
+    }
     
 }
 
@@ -177,6 +185,10 @@ extension SignUpPresenterTests {
         
         func completeWithError(_ error: DomainError) -> Void {
             completion?(.failure(.unexpected))
+        }
+        
+        func completeWithSuccess(_ accountModel: AccountModel) -> Void {
+            completion?(.success(accountModel))
         }
     }
     
