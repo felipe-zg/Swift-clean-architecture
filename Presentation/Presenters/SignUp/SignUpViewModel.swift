@@ -1,6 +1,6 @@
 import Foundation
 
-public struct SignUpViewModel {
+public struct SignUpViewModel: Equatable {
     public var name: String?
     public var email: String?
     public var password: String?
