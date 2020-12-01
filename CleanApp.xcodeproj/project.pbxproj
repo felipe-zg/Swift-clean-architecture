@@ -46,6 +46,7 @@
 		329E32F62573222300858506 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329E32F52573222300858506 /* EmailValidator.swift */; };
 		329E32FF2573278A00858506 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3264875C2569A4B1006B5B74 /* Domain.framework */; };
 		329E33002573278A00858506 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3264875C2569A4B1006B5B74 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32A09FAC25765423001358BA /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A09FAB25765423001358BA /* EmailValidatorAdapter.swift */; };
 		32B85D922575341F00E1799E /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B85D892575341F00E1799E /* UI.framework */; };
 		32B85D972575341F00E1799E /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B85D962575341F00E1799E /* SignUpViewControllerTests.swift */; };
 		32B85DFA257539FA00E1799E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324CA31A25727B430044F94F /* Presentation.framework */; };
@@ -251,6 +252,7 @@
 		329E32D42573176C00858506 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		329E32DE257317EC00858506 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		329E32F52573222300858506 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		32A09FAB25765423001358BA /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
 		32B85D892575341F00E1799E /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B85D8C2575341F00E1799E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32B85D912575341F00E1799E /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -445,6 +447,7 @@
 		322C06EA25764F3A00ABAB46 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				32A09FAA25765404001358BA /* Validators */,
 				322C06EC25764F3A00ABAB46 /* Info.plist */,
 			);
 			path = Validation;
@@ -453,7 +456,7 @@
 		322C06F525764F3A00ABAB46 /* ValidationTests */ = {
 			isa = PBXGroup;
 			children = (
-				322C06F625764F3A00ABAB46 /* EmailValidatorTests.swift */,
+				32A09FB5257654D9001358BA /* Validators */,
 				322C06F825764F3A00ABAB46 /* Info.plist */,
 			);
 			path = ValidationTests;
@@ -688,6 +691,22 @@
 				329E32F52573222300858506 /* EmailValidator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		32A09FAA25765404001358BA /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				32A09FAB25765423001358BA /* EmailValidatorAdapter.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		32A09FB5257654D9001358BA /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				322C06F625764F3A00ABAB46 /* EmailValidatorTests.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		32B85D8A2575341F00E1799E /* UI */ = {
@@ -1063,6 +1082,7 @@
 				TargetAttributes = {
 					322C06E825764F3A00ABAB46 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					322C06F025764F3A00ABAB46 = {
 						CreatedOnToolsVersion = 12.2;
@@ -1229,6 +1249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32A09FAC25765423001358BA /* EmailValidatorAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1423,6 +1444,7 @@
 		322C06FB25764F3A00ABAB46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1440,6 +1462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1447,6 +1470,7 @@
 		322C06FC25764F3A00ABAB46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1471,6 +1495,7 @@
 		322C06FE25764F3A00ABAB46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ValidationTests/Info.plist;
@@ -1489,6 +1514,7 @@
 		322C06FF25764F3A00ABAB46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ValidationTests/Info.plist;
