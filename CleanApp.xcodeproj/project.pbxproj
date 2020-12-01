@@ -13,6 +13,7 @@
 		321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		322C06B02576454100ABAB46 /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */; };
+		322C06CF257646F900ABAB46 /* UIControlExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06CE257646F900ABAB46 /* UIControlExtentions.swift */; };
 		32466BA8257272BC00BF9A1E /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32466BA7257272BC00BF9A1E /* AddAccountIntegrationTests.swift */; };
 		32466BAA257272BC00BF9A1E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326487792569A6F6006B5B74 /* Data.framework */; };
 		324CA32325727B430044F94F /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324CA31A25727B430044F94F /* Presentation.framework */; };
@@ -200,6 +201,7 @@
 		3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionHelpers.swift; sourceTree = "<group>"; };
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtentions.swift; sourceTree = "<group>"; };
+		322C06CE257646F900ABAB46 /* UIControlExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtentions.swift; sourceTree = "<group>"; };
 		32466BA5257272BC00BF9A1E /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32466BA7257272BC00BF9A1E /* AddAccountIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountIntegrationTests.swift; sourceTree = "<group>"; };
 		32466BA9257272BC00BF9A1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -398,6 +400,14 @@
 				322C06BF257646A300ABAB46 /* SignUp */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		322C06CD257646E400ABAB46 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				322C06CE257646F900ABAB46 /* UIControlExtentions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		32466BA6257272BC00BF9A1E /* UseCasesIntegrationTests */ = {
@@ -640,6 +650,7 @@
 		32B85D952575341F00E1799E /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				322C06CD257646E400ABAB46 /* Helpers */,
 				322C06C0257646AE00ABAB46 /* Scenes */,
 				32B85D982575341F00E1799E /* Info.plist */,
 			);
@@ -1199,6 +1210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322C06CF257646F900ABAB46 /* UIControlExtentions.swift in Sources */,
 				32B85D972575341F00E1799E /* SignUpViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
