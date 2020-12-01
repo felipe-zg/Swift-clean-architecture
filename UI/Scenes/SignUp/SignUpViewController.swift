@@ -1,7 +1,7 @@
 import UIKit
 import Presentation
 
-class SignUpViewController: UIViewController, Storyboarded {
+public class SignUpViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var saveButton: UIButton!
@@ -10,9 +10,9 @@ class SignUpViewController: UIViewController, Storyboarded {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
-    var signUp: ((SignUpViewModel) -> Void)?
+    public var signUp: ((SignUpViewModel) -> Void)?
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController, Storyboarded {
 }
 
 extension SignUpViewController: LoadingView {
-    func display(viewModel: LoadingViewModel) {
+    public func display(viewModel: LoadingViewModel) {
         viewModel.isLoading ? load(enableUserInteraction: false, animate: { loadingIndicator.startAnimating() }): load(enableUserInteraction: true, animate: { loadingIndicator.stopAnimating() })
     }
     
@@ -40,7 +40,7 @@ extension SignUpViewController: LoadingView {
 }
 
 extension SignUpViewController: AlertView {
-    func showMessage(_ alertViewModel: AlertViewModel) {
+    public  func showMessage(_ alertViewModel: AlertViewModel) {
         let alert = UIAlertController(title: alertViewModel.title, message: alertViewModel.message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
