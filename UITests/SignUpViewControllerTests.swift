@@ -10,3 +10,13 @@ class SignUpViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.loadingIndicator?.isAnimating, false)
     }
 }
+
+
+extension SignUpViewControllerTests {
+    func makeSut() -> SignUpViewController {
+        let sb = UIStoryboard(name: "SignUp", bundle: Bundle(for: SignUpViewController.self))
+        let sut = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        sut.loadViewIfNeeded()
+        return sut
+    }
+}
