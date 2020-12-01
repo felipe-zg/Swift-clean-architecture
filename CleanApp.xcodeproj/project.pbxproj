@@ -21,7 +21,9 @@
 		32466BAA257272BC00BF9A1E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326487792569A6F6006B5B74 /* Data.framework */; };
 		324CA32325727B430044F94F /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324CA31A25727B430044F94F /* Presentation.framework */; };
 		324CA32825727B430044F94F /* SignupPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CA32725727B430044F94F /* SignupPresenterTests.swift */; };
-		325D7BD22576ADE000C93E12 /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BD12576ADE000C93E12 /* SignUpFactory.swift */; };
+		325D7BD22576ADE000C93E12 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BD12576ADE000C93E12 /* ControllerFactory.swift */; };
+		325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BDE2576B47700C93E12 /* SignUpComposer.swift */; };
+		325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BFE2576B5FC00C93E12 /* UseCaseFactory.swift */; };
 		325EF5C725712C97009535AE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 325EF5C625712C97009535AE /* Alamofire */; };
 		325EF5CF25712D72009535AE /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325EF5CE25712D72009535AE /* UrlProtocolStub.swift */; };
 		3264876F2569A62B006B5B74 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264876E2569A62B006B5B74 /* AddAccount.swift */; };
@@ -317,7 +319,9 @@
 		324CA32225727B430044F94F /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		324CA32725727B430044F94F /* SignupPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenterTests.swift; sourceTree = "<group>"; };
 		324CA32925727B430044F94F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		325D7BD12576ADE000C93E12 /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactory.swift; sourceTree = "<group>"; };
+		325D7BD12576ADE000C93E12 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
+		325D7BDE2576B47700C93E12 /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
+		325D7BFE2576B5FC00C93E12 /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		325EF5CE25712D72009535AE /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		3264875C2569A4B1006B5B74 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264875F2569A4B1006B5B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -627,9 +631,18 @@
 		325D7BD02576ADCC00C93E12 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				325D7BD12576ADE000C93E12 /* SignUpFactory.swift */,
+				325D7BD12576ADE000C93E12 /* ControllerFactory.swift */,
+				325D7BFE2576B5FC00C93E12 /* UseCaseFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		325D7BDD2576B44600C93E12 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				325D7BDE2576B47700C93E12 /* SignUpComposer.swift */,
+			);
+			path = Composers;
 			sourceTree = "<group>";
 		};
 		326487402569A48A006B5B74 = {
@@ -884,6 +897,7 @@
 		32F7C1882576746600244F98 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				325D7BDD2576B44600C93E12 /* Composers */,
 				325D7BD02576ADCC00C93E12 /* Factories */,
 				32F7C1892576746600244F98 /* AppDelegate.swift */,
 				32F7C18B2576746600244F98 /* SceneDelegate.swift */,
@@ -1645,7 +1659,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F7C18A2576746600244F98 /* AppDelegate.swift in Sources */,
-				325D7BD22576ADE000C93E12 /* SignUpFactory.swift in Sources */,
+				325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */,
+				325D7BD22576ADE000C93E12 /* ControllerFactory.swift in Sources */,
+				325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */,
 				32F7C18C2576746600244F98 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
