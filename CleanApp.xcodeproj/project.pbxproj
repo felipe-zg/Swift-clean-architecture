@@ -14,6 +14,8 @@
 		3218DD332577BE4300A42EB3 /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD322577BE4300A42EB3 /* SignUpIntegrationTests.swift */; };
 		3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */; };
 		3218DD732577C00E00A42EB3 /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
+		3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD952577CC6E00A42EB3 /* Environment.swift */; };
+		3218DDCD2577D57900A42EB3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3218DDCC2577D57800A42EB3 /* .gitignore */; };
 		321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		322C06B02576454100ABAB46 /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */; };
@@ -308,6 +310,10 @@
 		3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionHelpers.swift; sourceTree = "<group>"; };
 		3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		3218DD322577BE4300A42EB3 /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
+		3218DD7F2577C8AE00A42EB3 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		3218DD8A2577C93500A42EB3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		3218DD952577CC6E00A42EB3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		3218DDCC2577D57800A42EB3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtentions.swift; sourceTree = "<group>"; };
 		322C06CE257646F900ABAB46 /* UIControlExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtentions.swift; sourceTree = "<group>"; };
@@ -525,6 +531,24 @@
 			path = Proxies;
 			sourceTree = "<group>";
 		};
+		3218DD7E2577C83F00A42EB3 /* Env */ = {
+			isa = PBXGroup;
+			children = (
+				3218DDA12577D10B00A42EB3 /* Configs */,
+				3218DD952577CC6E00A42EB3 /* Environment.swift */,
+			);
+			path = Env;
+			sourceTree = "<group>";
+		};
+		3218DDA12577D10B00A42EB3 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				3218DD7F2577C8AE00A42EB3 /* Debug.xcconfig */,
+				3218DD8A2577C93500A42EB3 /* Release.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		321F397D256B047E00E4A3ED /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +703,7 @@
 				32F7C1AA2576746700244F98 /* MainUITests */,
 				3264874B2569A48A006B5B74 /* Products */,
 				326487962569A710006B5B74 /* Frameworks */,
+				3218DDCC2577D57800A42EB3 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -911,6 +936,7 @@
 		32F7C1882576746600244F98 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3218DD7E2577C83F00A42EB3 /* Env */,
 				3218DD1A2577BC3F00A42EB3 /* Proxies */,
 				325D7BDD2576B44600C93E12 /* Composers */,
 				325D7BD02576ADCC00C93E12 /* Factories */,
@@ -926,8 +952,8 @@
 		32F7C19F2576746600244F98 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				32F7C1A22576746700244F98 /* Info.plist */,
 				3218DD322577BE4300A42EB3 /* SignUpIntegrationTests.swift */,
+				32F7C1A22576746700244F98 /* Info.plist */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -1525,6 +1551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F7C1962576746600244F98 /* LaunchScreen.storyboard in Resources */,
+				3218DDCD2577D57900A42EB3 /* .gitignore in Resources */,
 				32F7C1932576746600244F98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1678,6 +1705,7 @@
 				32F7C18A2576746600244F98 /* AppDelegate.swift in Sources */,
 				325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */,
 				325D7BD22576ADE000C93E12 /* ControllerFactory.swift in Sources */,
+				3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */,
 				325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */,
 				3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */,
 				32F7C18C2576746600244F98 /* SceneDelegate.swift in Sources */,
@@ -2479,6 +2507,7 @@
 		};
 		32F7C1AE2576746700244F98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3218DD7F2577C8AE00A42EB3 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2499,6 +2528,7 @@
 		};
 		32F7C1AF2576746700244F98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3218DD8A2577C93500A42EB3 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
