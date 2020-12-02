@@ -27,7 +27,6 @@
 		32466BAA257272BC00BF9A1E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326487792569A6F6006B5B74 /* Data.framework */; };
 		324CA32325727B430044F94F /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324CA31A25727B430044F94F /* Presentation.framework */; };
 		324CA32825727B430044F94F /* SignupPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CA32725727B430044F94F /* SignupPresenterTests.swift */; };
-		325D7BD22576ADE000C93E12 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BD12576ADE000C93E12 /* ControllerFactory.swift */; };
 		325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BDE2576B47700C93E12 /* SignUpComposer.swift */; };
 		325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D7BFE2576B5FC00C93E12 /* UseCaseFactory.swift */; };
 		325EF5C725712C97009535AE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 325EF5C625712C97009535AE /* Alamofire */; };
@@ -331,7 +330,6 @@
 		324CA32225727B430044F94F /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		324CA32725727B430044F94F /* SignupPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenterTests.swift; sourceTree = "<group>"; };
 		324CA32925727B430044F94F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		325D7BD12576ADE000C93E12 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		325D7BDE2576B47700C93E12 /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		325D7BFE2576B5FC00C93E12 /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		325EF5CE25712D72009535AE /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
@@ -669,7 +667,6 @@
 		325D7BD02576ADCC00C93E12 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				325D7BD12576ADE000C93E12 /* ControllerFactory.swift */,
 				325D7BFE2576B5FC00C93E12 /* UseCaseFactory.swift */,
 			);
 			path = Factories;
@@ -1704,7 +1701,6 @@
 			files = (
 				32F7C18A2576746600244F98 /* AppDelegate.swift in Sources */,
 				325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */,
-				325D7BD22576ADE000C93E12 /* ControllerFactory.swift in Sources */,
 				3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */,
 				325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */,
 				3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */,
