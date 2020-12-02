@@ -10,6 +10,10 @@
 		320324AD256B426E0014E757 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320324AC256B426E0014E757 /* DomainError.swift */; };
 		32065DC0257086420042F451 /* ExtentionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */; };
 		3211F9F9256B9B0A0026F56D /* ExtentionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */; };
+		3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */; };
+		3218DD332577BE4300A42EB3 /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD322577BE4300A42EB3 /* SignUpIntegrationTests.swift */; };
+		3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */; };
+		3218DD732577C00E00A42EB3 /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		322C06B02576454100ABAB46 /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */; };
@@ -302,6 +306,8 @@
 /* Begin PBXFileReference section */
 		320324AC256B426E0014E757 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionHelpers.swift; sourceTree = "<group>"; };
+		3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
+		3218DD322577BE4300A42EB3 /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtentions.swift; sourceTree = "<group>"; };
 		322C06CE257646F900ABAB46 /* UIControlExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtentions.swift; sourceTree = "<group>"; };
@@ -509,6 +515,14 @@
 				3211F9F8256B9B0A0026F56D /* ExtentionHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3218DD1A2577BC3F00A42EB3 /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */,
+			);
+			path = Proxies;
 			sourceTree = "<group>";
 		};
 		321F397D256B047E00E4A3ED /* Errors */ = {
@@ -897,6 +911,7 @@
 		32F7C1882576746600244F98 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3218DD1A2577BC3F00A42EB3 /* Proxies */,
 				325D7BDD2576B44600C93E12 /* Composers */,
 				325D7BD02576ADCC00C93E12 /* Factories */,
 				32F7C1892576746600244F98 /* AppDelegate.swift */,
@@ -912,6 +927,7 @@
 			isa = PBXGroup;
 			children = (
 				32F7C1A22576746700244F98 /* Info.plist */,
+				3218DD322577BE4300A42EB3 /* SignUpIntegrationTests.swift */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -1374,6 +1390,7 @@
 					};
 					32F7C19B2576746600244F98 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 						TestTargetID = 32F7C1862576746600244F98;
 					};
 					32F7C1A62576746700244F98 = {
@@ -1662,6 +1679,7 @@
 				325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */,
 				325D7BD22576ADE000C93E12 /* ControllerFactory.swift in Sources */,
 				325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */,
+				3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */,
 				32F7C18C2576746600244F98 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1670,6 +1688,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */,
+				3218DD332577BE4300A42EB3 /* SignUpIntegrationTests.swift in Sources */,
+				3218DD732577C00E00A42EB3 /* TestExtentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2502,6 +2523,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MainTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
@@ -2513,6 +2535,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipezeba.MainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Main.app/Main";
@@ -2524,6 +2547,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MainTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;

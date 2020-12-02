@@ -10,7 +10,7 @@ class ControllerFactory {
     static func makeSignUp(addAccount: AddAccount) -> SignUpViewController {
         let controller = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
-        let presenter = SignUpPresenter(alertView: controller, loadingView: controller, emailValidator: emailValidatorAdapter, addAccount: addAccount)
+        let presenter = SignUpPresenter(alertView: WeakVarProxy(controller), loadingView: WeakVarProxy(controller), emailValidator: emailValidatorAdapter, addAccount: addAccount)
         controller.signUp = presenter.signUp
         return controller
     }
