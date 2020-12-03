@@ -17,6 +17,7 @@
 		3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD952577CC6E00A42EB3 /* Environment.swift */; };
 		3218DDCD2577D57900A42EB3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3218DDCC2577D57800A42EB3 /* .gitignore */; };
 		321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
+		321C000C2579119400A0A3C4 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C000B2579119400A0A3C4 /* MainQueueDispatchDecorator.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		322C06B02576454100ABAB46 /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */; };
 		322C06CF257646F900ABAB46 /* UIControlExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06CE257646F900ABAB46 /* UIControlExtentions.swift */; };
@@ -313,6 +314,7 @@
 		3218DD8A2577C93500A42EB3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		3218DD952577CC6E00A42EB3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		3218DDCC2577D57800A42EB3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		321C000B2579119400A0A3C4 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtentions.swift; sourceTree = "<group>"; };
 		322C06CE257646F900ABAB46 /* UIControlExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtentions.swift; sourceTree = "<group>"; };
@@ -545,6 +547,14 @@
 				3218DD8A2577C93500A42EB3 /* Release.xcconfig */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		321C000A2579116400A0A3C4 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				321C000B2579119400A0A3C4 /* MainQueueDispatchDecorator.swift */,
+			);
+			path = Decorators;
 			sourceTree = "<group>";
 		};
 		321F397D256B047E00E4A3ED /* Errors */ = {
@@ -942,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				3218DD7E2577C83F00A42EB3 /* Env */,
+				321C000A2579116400A0A3C4 /* Decorators */,
 				3218DD1A2577BC3F00A42EB3 /* Proxies */,
 				325D7BDD2576B44600C93E12 /* Composers */,
 				325D7BD02576ADCC00C93E12 /* Factories */,
@@ -1708,6 +1719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F7C18A2576746600244F98 /* AppDelegate.swift in Sources */,
+				321C000C2579119400A0A3C4 /* MainQueueDispatchDecorator.swift in Sources */,
 				325D7BDF2576B47700C93E12 /* SignUpComposer.swift in Sources */,
 				3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */,
 				325D7BFF2576B5FC00C93E12 /* UseCaseFactory.swift in Sources */,
