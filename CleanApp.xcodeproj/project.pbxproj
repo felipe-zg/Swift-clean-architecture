@@ -18,6 +18,7 @@
 		3218DDCD2577D57900A42EB3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3218DDCC2577D57800A42EB3 /* .gitignore */; };
 		321AEF77256FF10C0008769F /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		321C000C2579119400A0A3C4 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C000B2579119400A0A3C4 /* MainQueueDispatchDecorator.swift */; };
+		321C00172579169800A0A3C4 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD1AD25751F1D001579B8 /* TestFactories.swift */; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
 		322C06B02576454100ABAB46 /* UIViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06AF2576454100ABAB46 /* UIViewControllerExtentions.swift */; };
 		322C06CF257646F900ABAB46 /* UIControlExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322C06CE257646F900ABAB46 /* UIControlExtentions.swift */; };
@@ -1734,6 +1735,7 @@
 			files = (
 				3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */,
 				3218DD332577BE4300A42EB3 /* SignUpComposerTests.swift in Sources */,
+				321C00172579169800A0A3C4 /* TestFactories.swift in Sources */,
 				3218DD732577C00E00A42EB3 /* TestExtentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

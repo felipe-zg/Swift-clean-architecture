@@ -5,7 +5,7 @@ import Domain
 public final class MainQueueDispatchDecorator<T> {
     private let instance: T
     
-    init(_ instance: T) {
+    public init(_ instance: T) {
         self.instance = instance
     }
     
