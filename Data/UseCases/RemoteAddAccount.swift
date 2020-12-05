@@ -15,7 +15,13 @@ public class RemoteAddAccount: AddAccount{
             guard self != nil else {return}
             let _ = self?.url
             switch result {
-            case .failure:  completion(.failure(.unexpected))
+            case .failure(let error):
+                switch error {
+                case .forbidden:
+                    completion(.failure(.emailInUse))
+                default:
+                    completion(.failure(.unexpected))
+                }
             case .success(let data):
                 if let model: AccountModel = data?.toModel() {
                     completion(.success(model))
