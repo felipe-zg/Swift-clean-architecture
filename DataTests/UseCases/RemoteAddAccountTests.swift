@@ -19,10 +19,17 @@ class RemoteAddAccountTests: XCTestCase {
         XCTAssertEqual(httpPostClientSpy.data, addAccountModel.toData())
     }
     
-    func test_add_should_complete_with_DomainError_if_client_fails(){
+    func test_add_should_complete_with_generic_error_if_client_fails(){
         let (sut, httpPostClientSpy) = makeSut()
         expect(sut, completeWith: .failure(.unexpected), when: {
             httpPostClientSpy.completeWithError(.noConectivity)
+        })
+    }
+    
+    func test_add_should_complete_with_email_in_use_error_if_client_completes_with_forbidden(){
+        let (sut, httpPostClientSpy) = makeSut()
+        expect(sut, completeWith: .failure(.emailInUse), when: {
+            httpPostClientSpy.completeWithError(.forbidden)
         })
     }
     
@@ -34,7 +41,7 @@ class RemoteAddAccountTests: XCTestCase {
         })
     }
     
-    func test_add_should_complete_with_DomainError_if_client_completes_with_invalid_data(){
+    func test_add_should_complete_with_generic_error_if_client_completes_with_invalid_data(){
         let (sut, httpPostClientSpy) = makeSut()
         expect(sut, completeWith: .failure(.unexpected), when: {
             httpPostClientSpy.completeWithData(makeInvalidData())
