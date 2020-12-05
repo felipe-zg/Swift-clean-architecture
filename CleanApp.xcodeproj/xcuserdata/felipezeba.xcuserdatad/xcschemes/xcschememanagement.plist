@@ -11,6 +11,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Core.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Data.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -68,6 +73,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3264875B2569A4B1006B5B74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>326487782569A6F6006B5B74</key>
 		<dict>
 			<key>primary</key>
