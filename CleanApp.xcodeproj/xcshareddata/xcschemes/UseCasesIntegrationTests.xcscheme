@@ -5,46 +5,23 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487782569A6F6006B5B74"
-               BuildableName = "Data.framework"
-               BlueprintName = "Data"
-               ReferencedContainer = "container:CleanApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-<<<<<<< HEAD
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-=======
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      enableThreadSanitizer = "YES">
-      <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487802569A6F6006B5B74"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
+               BlueprintIdentifier = "32466BA4257272BC00BF9A1E"
+               BuildableName = "UseCasesIntegrationTests.xctest"
+               BlueprintName = "UseCasesIntegrationTests"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
->>>>>>> errors
       </Testables>
    </TestAction>
    <LaunchAction
@@ -64,15 +41,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "326487782569A6F6006B5B74"
-            BuildableName = "Data.framework"
-            BlueprintName = "Data"
-            ReferencedContainer = "container:CleanApp.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

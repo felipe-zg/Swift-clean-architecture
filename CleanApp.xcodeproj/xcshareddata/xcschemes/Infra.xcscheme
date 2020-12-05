@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487782569A6F6006B5B74"
-               BuildableName = "Data.framework"
-               BlueprintName = "Data"
+               BlueprintIdentifier = "328FA879256ECF87003BC229"
+               BuildableName = "Infra.framework"
+               BlueprintName = "Infra"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,10 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-<<<<<<< HEAD
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-=======
       shouldUseLaunchSchemeArgsEnv = "YES"
       enableThreadSanitizer = "YES">
       <Testables>
@@ -38,13 +34,12 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487802569A6F6006B5B74"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
+               BlueprintIdentifier = "328FA881256ECF87003BC229"
+               BuildableName = "InfraTests.xctest"
+               BlueprintName = "InfraTests"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
->>>>>>> errors
       </Testables>
    </TestAction>
    <LaunchAction
@@ -67,9 +62,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "326487782569A6F6006B5B74"
-            BuildableName = "Data.framework"
-            BlueprintName = "Data"
+            BlueprintIdentifier = "328FA879256ECF87003BC229"
+            BuildableName = "Infra.framework"
+            BlueprintName = "Infra"
             ReferencedContainer = "container:CleanApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -1,7 +1,7 @@
 import XCTest
-import Validation
+import Infra
 
-class EmailValidatorTests: XCTestCase {
+class EmailValidatorAdapterTests: XCTestCase {
 
     func test_EmailValidatorAdapter_should_return_false_if_email_is_invalid() throws {
         let sut = makeSut()
@@ -21,7 +21,7 @@ class EmailValidatorTests: XCTestCase {
     }
 }
 
-extension EmailValidatorTests {
+extension EmailValidatorAdapterTests {
     func makeSut() -> EmailValidatorAdapter {
         return EmailValidatorAdapter()
     }

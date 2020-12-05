@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487782569A6F6006B5B74"
-               BuildableName = "Data.framework"
-               BlueprintName = "Data"
+               BlueprintIdentifier = "32B85D882575341F00E1799E"
+               BuildableName = "UI.framework"
+               BlueprintName = "UI"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,25 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-<<<<<<< HEAD
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-=======
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      enableThreadSanitizer = "YES">
-      <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487802569A6F6006B5B74"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
+               BlueprintIdentifier = "32B85D902575341F00E1799E"
+               BuildableName = "UITests.xctest"
+               BlueprintName = "UITests"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
->>>>>>> errors
       </Testables>
    </TestAction>
    <LaunchAction
@@ -67,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "326487782569A6F6006B5B74"
-            BuildableName = "Data.framework"
-            BlueprintName = "Data"
+            BlueprintIdentifier = "32B85D882575341F00E1799E"
+            BuildableName = "UI.framework"
+            BlueprintName = "UI"
             ReferencedContainer = "container:CleanApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

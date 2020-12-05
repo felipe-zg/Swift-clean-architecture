@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487782569A6F6006B5B74"
-               BuildableName = "Data.framework"
-               BlueprintName = "Data"
+               BlueprintIdentifier = "324CA31925727B430044F94F"
+               BuildableName = "Presentation.framework"
+               BlueprintName = "Presentation"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,25 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-<<<<<<< HEAD
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-=======
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      enableThreadSanitizer = "YES">
-      <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487802569A6F6006B5B74"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
+               BlueprintIdentifier = "324CA32125727B430044F94F"
+               BuildableName = "PresentationTests.xctest"
+               BlueprintName = "PresentationTests"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
->>>>>>> errors
       </Testables>
    </TestAction>
    <LaunchAction
@@ -67,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "326487782569A6F6006B5B74"
-            BuildableName = "Data.framework"
-            BlueprintName = "Data"
+            BlueprintIdentifier = "324CA31925727B430044F94F"
+            BuildableName = "Presentation.framework"
+            BlueprintName = "Presentation"
             ReferencedContainer = "container:CleanApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

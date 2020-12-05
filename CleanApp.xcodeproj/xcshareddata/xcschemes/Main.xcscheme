@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487782569A6F6006B5B74"
-               BuildableName = "Data.framework"
-               BlueprintName = "Data"
+               BlueprintIdentifier = "32F7C1862576746600244F98"
+               BuildableName = "Main.app"
+               BlueprintName = "Main"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,25 +26,28 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-<<<<<<< HEAD
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-=======
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      enableThreadSanitizer = "YES">
-      <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "326487802569A6F6006B5B74"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
+               BlueprintIdentifier = "32F7C19B2576746600244F98"
+               BuildableName = "MainTests.xctest"
+               BlueprintName = "MainTests"
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
->>>>>>> errors
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "32F7C1A62576746700244F98"
+               BuildableName = "MainUITests.xctest"
+               BlueprintName = "MainUITests"
+               ReferencedContainer = "container:CleanApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -57,6 +60,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "32F7C1862576746600244F98"
+            BuildableName = "Main.app"
+            BlueprintName = "Main"
+            ReferencedContainer = "container:CleanApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -64,15 +77,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "326487782569A6F6006B5B74"
-            BuildableName = "Data.framework"
-            BlueprintName = "Data"
+            BlueprintIdentifier = "32F7C1862576746600244F98"
+            BuildableName = "Main.app"
+            BlueprintName = "Main"
             ReferencedContainer = "container:CleanApp.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

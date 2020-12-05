@@ -1,0 +1,6 @@
+framework module Pods_Infra_InfraTests {
+  umbrella header "Pods-Infra-InfraTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
