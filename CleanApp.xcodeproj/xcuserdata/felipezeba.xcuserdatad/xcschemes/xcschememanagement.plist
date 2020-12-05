@@ -6,52 +6,95 @@
 	<dict>
 		<key>CI.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Data.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Domain.xcscheme_^#shared#^_</key>
-		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Domain.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Infra.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 		<key>Main.xcscheme_^#shared#^_</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-		<key>Presentation.xcscheme_^#shared#^_</key>
-		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Presentation.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>UI.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
 		<key>UseCasesIntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
 		<key>Validation.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>322C06E825764F3A00ABAB46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>322C06F025764F3A00ABAB46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32466BA4257272BC00BF9A1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>324CA31925727B430044F94F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>324CA32125727B430044F94F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3264875B2569A4B1006B5B74</key>
 		<dict>
 			<key>primary</key>
@@ -63,6 +106,31 @@
 			<true/>
 		</dict>
 		<key>326487802569A6F6006B5B74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32B85D882575341F00E1799E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32B85D902575341F00E1799E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32F7C1862576746600244F98</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32F7C19B2576746600244F98</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32F7C1A62576746700244F98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
