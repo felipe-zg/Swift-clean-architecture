@@ -8,7 +8,7 @@ class RemoteAddAccountTests: XCTestCase {
         let url = makeURL()
         let addAccountModel = makeAddAccountModel()
         let (sut, httpPostClientSpy) = makeSut(url: url)
-        sut.add(addAccountModel: addAccountModel) {_ in}uuu
+        sut.add(addAccountModel: addAccountModel) {_ in}
         XCTAssertEqual(httpPostClientSpy.urls, [url])
     }
     
