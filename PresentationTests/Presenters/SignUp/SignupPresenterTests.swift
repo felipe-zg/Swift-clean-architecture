@@ -1,7 +1,7 @@
 import XCTest
 import Presentation
 import Domain
-import Data
+
 
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_call_addAccount_with_correct_values() throws {
@@ -22,6 +22,20 @@ class SignUpPresenterTests: XCTestCase {
         }
         sut.signUp(viewModel: makeSignUpModel())
         addAccountSpy.completeWithError(.unexpected)
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_signUp_should_show_email_in_use_error_message_if_addAccount_returns_EmailInUse_error() throws {
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let exp = expectation(description: "waiting test")
+        alertViewSpy.observe { (alertViewModel) in
+            XCTAssertEqual(alertViewModel, AlertViewModel(title: "Error", message: "This e-mail is already being used"))
+            exp.fulfill()
+        }
+        sut.signUp(viewModel: makeSignUpModel())
+        addAccountSpy.completeWithError(.emailInUse)
         wait(for: [exp], timeout: 1)
     }
     
