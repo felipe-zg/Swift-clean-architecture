@@ -16,10 +16,10 @@ public final class SignUpPresenter {
     
     public func signUp(viewModel: SignUpViewModel) {
             if let message = validation.validate(data: viewModel.toJSON()) {
-                alertiView.showMessage(AlertViewModel(title: "Falha na validação", message: message))
+                alertiView.showMessage(AlertViewModel(title: "Validation failed", message: message))
             } else {
             loadingView.display(viewModel: LoadingViewModel(isLoading: true))
-            addAccount.add(addAccountModel: SignUpMapper.toAddAccountModel(viewModel: viewModel)) { [weak self] result in
+                addAccount.add(addAccountModel: viewModel.toAddAccountModel()) { [weak self] result in
                 guard let self = self else { return }
                 self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
                 switch result {
