@@ -28,7 +28,8 @@ public final class LoginPresenter {
                         errorMessage = "An unexpected error occured, please try again later"
                     }
                     self.alertiView.showMessage(AlertViewModel(title: "Error", message: errorMessage))
-                case .success: break
+                case .success:
+                    self.alertiView.showMessage(AlertViewModel(title: "Success", message: "Logged in successfully"))
                 }
             }
         }
