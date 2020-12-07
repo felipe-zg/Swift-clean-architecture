@@ -5,6 +5,10 @@ func makeSignUpModel(name: String? = "any_name", email: String? = "any_email@ema
     return SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
 }
 
+func makeLoginViewModel(email: String? = "any_email@email.com", password: String? = "any_password") -> LoginViewModel {
+    return LoginViewModel(email: email, password: password)
+}
+
 func makeRequiredFieldAlertViewModelFor(field: String) -> AlertViewModel{
     return AlertViewModel(title: "Required field", message: "\(field) is required")
 }
