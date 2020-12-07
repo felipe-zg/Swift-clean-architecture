@@ -22,7 +22,12 @@ public class RemoteAuthentication{
                 default:
                     completion(.failure(.unexpected))
                 }
-            case .success: break
+            case .success(let data):
+                if let model: AccountModel = data?.toModel() {
+                    completion(.success(model))
+                } else {
+                    completion(.failure(.unexpected))
+                }
             }
         }
     }
