@@ -15,6 +15,15 @@ class LoginViewControllerTests: XCTestCase {
     func test_it_implements_AlertView() throws {
         XCTAssertNotNil(makeSut() as AlertView)
     }
+    
+    func test_loginButton_calls_login_on_tap() throws {
+        var loginVireModel: LoginViewModel?
+        let sut = makeSut( loginSpy: { loginVireModel = $0 })
+        sut.loginButton?.simulateTap()
+        let email = sut.emailTextField?.text
+        let password = sut.passwordTextField?.text
+        XCTAssertEqual(loginVireModel, LoginViewModel(email: email, password: password))
+    }
 }
 
 extension LoginViewControllerTests {
