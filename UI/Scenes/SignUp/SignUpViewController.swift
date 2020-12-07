@@ -14,6 +14,7 @@ public class SignUpViewController: UIViewController, Storyboarded {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Sign up"
         configure()
     }
     
