@@ -17,7 +17,7 @@
 		3218BB14257E9D0500886E65 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB13257E9D0500886E65 /* LoginViewModel.swift */; };
 		3218BB28257EB3C200886E65 /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */; };
 		3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */; };
-		3218DD332577BE4300A42EB3 /* SignUpComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD322577BE4300A42EB3 /* SignUpComposerTests.swift */; };
+		3218DD332577BE4300A42EB3 /* SignUpFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD322577BE4300A42EB3 /* SignUpFactoryTests.swift */; };
 		3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */; };
 		3218DD732577C00E00A42EB3 /* TestExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328FA862256ECBEC003BC229 /* TestExtentions.swift */; };
 		3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD952577CC6E00A42EB3 /* Environment.swift */; };
@@ -33,6 +33,9 @@
 		321C00702579329400A0A3C4 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322C06E925764F3A00ABAB46 /* Validation.framework */; };
 		321C00712579329400A0A3C4 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 322C06E925764F3A00ABAB46 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		321F3984256B061E00E4A3ED /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F3983256B061E00E4A3ED /* HttpError.swift */; };
+		32203EE4257ED4CC00CE73FE /* LoginFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32203EE3257ED4CC00CE73FE /* LoginFactoryTests.swift */; };
+		32203EEE257ED56700CE73FE /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */; };
+		32203EF9257ED5D100CE73FE /* LoginControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32203EF8257ED5D100CE73FE /* LoginControllerFactory.swift */; };
 		3223D782257E8CD300F0401B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223D781257E8CD300F0401B /* Authentication.swift */; };
 		3223D78D257E8DA100F0401B /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223D78C257E8DA100F0401B /* RemoteAuthenticationTests.swift */; };
 		3223D798257E8EA300F0401B /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223D797257E8EA300F0401B /* RemoteAuthentication.swift */; };
@@ -367,7 +370,7 @@
 		3218BB13257E9D0500886E65 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
-		3218DD322577BE4300A42EB3 /* SignUpComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposerTests.swift; sourceTree = "<group>"; };
+		3218DD322577BE4300A42EB3 /* SignUpFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactoryTests.swift; sourceTree = "<group>"; };
 		3218DD7F2577C8AE00A42EB3 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		3218DD8A2577C93500A42EB3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		3218DD952577CC6E00A42EB3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 		321C00222579314000A0A3C4 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		321C004E257931FD00A0A3C4 /* ValidationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSpy.swift; sourceTree = "<group>"; };
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		32203EE3257ED4CC00CE73FE /* LoginFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFactoryTests.swift; sourceTree = "<group>"; };
+		32203EF8257ED5D100CE73FE /* LoginControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerFactory.swift; sourceTree = "<group>"; };
 		3223D781257E8CD300F0401B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		3223D78C257E8DA100F0401B /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
 		3223D797257E8EA300F0401B /* RemoteAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
@@ -695,12 +700,13 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		322920CF25780C670063BAFC /* Composers */ = {
+		322920CF25780C670063BAFC /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				3218DD322577BE4300A42EB3 /* SignUpComposerTests.swift */,
+				3218DD322577BE4300A42EB3 /* SignUpFactoryTests.swift */,
+				32203EE3257ED4CC00CE73FE /* LoginFactoryTests.swift */,
 			);
-			path = Composers;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		322C06AE2576452400ABAB46 /* Helpers */ = {
@@ -1061,6 +1067,7 @@
 			isa = PBXGroup;
 			children = (
 				3295265C257C448800417BE7 /* SignUpControllerFactory.swift */,
+				32203EF8257ED5D100CE73FE /* LoginControllerFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1186,7 +1193,7 @@
 		32F7C19F2576746600244F98 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				322920CF25780C670063BAFC /* Composers */,
+				322920CF25780C670063BAFC /* Factories */,
 				32F7C1A22576746700244F98 /* Info.plist */,
 			);
 			path = MainTests;
@@ -1968,6 +1975,7 @@
 				32952648257C43BC00417BE7 /* EmailValidatorAdapterFactory.swift in Sources */,
 				32952628257C423100417BE7 /* AlamofireFactory.swift in Sources */,
 				3295261D257C41A800417BE7 /* ApiUrlFactory.swift in Sources */,
+				32203EF9257ED5D100CE73FE /* LoginControllerFactory.swift in Sources */,
 				3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */,
 				3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */,
 				32952634257C42B200417BE7 /* RemoteAddAccountFactory.swift in Sources */,
@@ -1980,7 +1988,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */,
-				3218DD332577BE4300A42EB3 /* SignUpComposerTests.swift in Sources */,
+				3218DD332577BE4300A42EB3 /* SignUpFactoryTests.swift in Sources */,
+				32203EEE257ED56700CE73FE /* AuthenticationSpy.swift in Sources */,
+				32203EE4257ED4CC00CE73FE /* LoginFactoryTests.swift in Sources */,
 				322F34DD257BB8C800B396D6 /* EmailValidatorSpy.swift in Sources */,
 				321C00172579169800A0A3C4 /* TestFactories.swift in Sources */,
 				3218DD732577C00E00A42EB3 /* TestExtentions.swift in Sources */,
