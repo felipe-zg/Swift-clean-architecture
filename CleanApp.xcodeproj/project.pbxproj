@@ -15,6 +15,7 @@
 		3218BAFC257E9C3100886E65 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BAFB257E9C3100886E65 /* LoginPresenterTests.swift */; };
 		3218BB09257E9CE800886E65 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB08257E9CE800886E65 /* LoginPresenter.swift */; };
 		3218BB14257E9D0500886E65 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB13257E9D0500886E65 /* LoginViewModel.swift */; };
+		3218BB28257EB3C200886E65 /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */; };
 		3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */; };
 		3218DD332577BE4300A42EB3 /* SignUpComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218DD322577BE4300A42EB3 /* SignUpComposerTests.swift */; };
 		3218DD5E2577BFFA00A42EB3 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */; };
@@ -361,6 +362,7 @@
 		3218BAFB257E9C3100886E65 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		3218BB08257E9CE800886E65 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		3218BB13257E9D0500886E65 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		3218DD1C2577BC7C00A42EB3 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		3218DD322577BE4300A42EB3 /* SignUpComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposerTests.swift; sourceTree = "<group>"; };
 		3218DD7F2577C8AE00A42EB3 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -1212,6 +1214,7 @@
 			isa = PBXGroup;
 			children = (
 				32FBD1A125751DF4001579B8 /* AddAccountSpy.swift */,
+				3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1843,6 +1846,7 @@
 				324CA32825727B430044F94F /* SignupPresenterTests.swift in Sources */,
 				321C004F257931FD00A0A3C4 /* ValidationSpy.swift in Sources */,
 				32FBD1AE25751F1D001579B8 /* TestFactories.swift in Sources */,
+				3218BB28257EB3C200886E65 /* AuthenticationSpy.swift in Sources */,
 				32EFE25D2574099300E10B19 /* TestExtentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
