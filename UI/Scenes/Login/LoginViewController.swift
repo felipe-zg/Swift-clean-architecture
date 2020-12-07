@@ -37,3 +37,11 @@ extension LoginViewController: LoadingView {
         animate()
     }
 }
+
+extension LoginViewController: AlertView {
+    public  func showMessage(_ alertViewModel: AlertViewModel) {
+        let alert = UIAlertController(title: alertViewModel.title, message: alertViewModel.message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+}
