@@ -27,3 +27,13 @@ public class LoginViewController: UIViewController, Storyboarded {
     }
 }
 
+extension LoginViewController: LoadingView {
+    public func display(viewModel: LoadingViewModel) {
+        viewModel.isLoading ? load(enableUserInteraction: false, animate: { loadingIndicator.startAnimating() }): load(enableUserInteraction: true, animate: { loadingIndicator.stopAnimating() })
+    }
+    
+    func load(enableUserInteraction: Bool, animate: () -> Void) {
+        view.isUserInteractionEnabled = enableUserInteraction
+        animate()
+    }
+}
