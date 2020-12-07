@@ -26,10 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-<<<<<<< HEAD
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-=======
       shouldUseLaunchSchemeArgsEnv = "YES"
       enableThreadSanitizer = "YES">
       <Testables>
@@ -44,7 +40,6 @@
                ReferencedContainer = "container:CleanApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
->>>>>>> errors
       </Testables>
    </TestAction>
    <LaunchAction
