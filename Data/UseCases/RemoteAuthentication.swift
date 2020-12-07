@@ -1,7 +1,7 @@
 import Foundation
 import Domain
 
-public class RemoteAuthentication{
+public class RemoteAuthentication: Authentication{
     private let url: URL
     private let httpPostClient: HttpPostClient
     
