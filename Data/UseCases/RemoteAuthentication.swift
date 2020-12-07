@@ -12,7 +12,12 @@ public class RemoteAuthentication{
     
     public func auth(authenticationModel: AuthenticationModel, completion: @escaping (Authentication.Result) -> Void){
         httpPostClient.post(to: url, with: authenticationModel.toData()) { [weak self] result in
-            
+            guard self != nil else {return}
+            let _ = self?.url
+            switch result {
+            case .failure :  completion(.failure(.unexpected))
+            case .success: break
+            }
         }
     }
 }
