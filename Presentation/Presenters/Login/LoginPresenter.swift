@@ -16,8 +16,13 @@ public final class LoginPresenter {
         if let message = validation.validate(data: viewModel.toJSON()) {
             alertiView.showMessage(AlertViewModel(title: "Validation failed", message: message))
         } else {
-            authentication.auth(authenticationModel: viewModel.toAuthenticationAccountModel()) { [weak self] (result) in
+            authentication.auth(authenticationModel: viewModel.toAuthenticationAccountModel()) { [weak self] result in
                 guard let self = self else { return }
+                switch result {
+                case .failure:
+                    self.alertiView.showMessage(AlertViewModel(title: "Error", message: "An unexpected error occured, please try again later"))
+                case .success: break
+                }
             }
         }
     }
