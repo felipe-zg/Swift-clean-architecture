@@ -31,6 +31,14 @@ class RemoteAuthenticationTests: XCTestCase {
             httpPostClientSpy.completeWithError(.unauthorized)
         })
     }
+    
+    func test_auth_should_complete_with_AccountModel_if_client_succeeds(){
+        let (sut, httpPostClientSpy) = makeSut()
+        let expectedAccount = makeAccountModel()
+        expect(sut, completeWith: .success(expectedAccount), when: {
+            httpPostClientSpy.completeWithData(expectedAccount.toData()!)
+        })
+    }
 
 }
 
