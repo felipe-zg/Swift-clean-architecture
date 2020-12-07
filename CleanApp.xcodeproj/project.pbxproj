@@ -36,6 +36,7 @@
 		32203EE4257ED4CC00CE73FE /* LoginFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32203EE3257ED4CC00CE73FE /* LoginFactoryTests.swift */; };
 		32203EEE257ED56700CE73FE /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218BB27257EB3C200886E65 /* AuthenticationSpy.swift */; };
 		32203EF9257ED5D100CE73FE /* LoginControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32203EF8257ED5D100CE73FE /* LoginControllerFactory.swift */; };
+		32203F04257ED87900CE73FE /* RemoteAuthenticationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32203F03257ED87900CE73FE /* RemoteAuthenticationFactory.swift */; };
 		3223D782257E8CD300F0401B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223D781257E8CD300F0401B /* Authentication.swift */; };
 		3223D78D257E8DA100F0401B /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223D78C257E8DA100F0401B /* RemoteAuthenticationTests.swift */; };
 		3223D798257E8EA300F0401B /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3223D797257E8EA300F0401B /* RemoteAuthentication.swift */; };
@@ -381,6 +382,7 @@
 		321F3983256B061E00E4A3ED /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		32203EE3257ED4CC00CE73FE /* LoginFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFactoryTests.swift; sourceTree = "<group>"; };
 		32203EF8257ED5D100CE73FE /* LoginControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerFactory.swift; sourceTree = "<group>"; };
+		32203F03257ED87900CE73FE /* RemoteAuthenticationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationFactory.swift; sourceTree = "<group>"; };
 		3223D781257E8CD300F0401B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		3223D78C257E8DA100F0401B /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
 		3223D797257E8EA300F0401B /* RemoteAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
@@ -1050,6 +1052,7 @@
 			children = (
 				3295261C257C41A800417BE7 /* ApiUrlFactory.swift */,
 				32952633257C42B200417BE7 /* RemoteAddAccountFactory.swift */,
+				32203F03257ED87900CE73FE /* RemoteAuthenticationFactory.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -1977,6 +1980,7 @@
 				3295261D257C41A800417BE7 /* ApiUrlFactory.swift in Sources */,
 				32203EF9257ED5D100CE73FE /* LoginControllerFactory.swift in Sources */,
 				3218DD962577CC6E00A42EB3 /* Environment.swift in Sources */,
+				32203F04257ED87900CE73FE /* RemoteAuthenticationFactory.swift in Sources */,
 				3218DD1D2577BC7C00A42EB3 /* WeakVarProxy.swift in Sources */,
 				32952634257C42B200417BE7 /* RemoteAddAccountFactory.swift in Sources */,
 				32F7C18C2576746600244F98 /* SceneDelegate.swift in Sources */,
