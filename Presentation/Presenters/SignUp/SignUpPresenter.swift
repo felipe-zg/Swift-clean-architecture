@@ -18,23 +18,23 @@ public final class SignUpPresenter {
             if let message = validation.validate(data: viewModel.toJSON()) {
                 alertiView.showMessage(AlertViewModel(title: "Validation failed", message: message))
             } else {
-            loadingView.display(viewModel: LoadingViewModel(isLoading: true))
+                loadingView.display(viewModel: LoadingViewModel(isLoading: true))
                 addAccount.add(addAccountModel: viewModel.toAddAccountModel()) { [weak self] result in
-                guard let self = self else { return }
-                self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
-                switch result {
-                case .failure(let error):
-                    var errorMessage: String!
-                    switch error {
-                    case .emailInUse:
-                        errorMessage = "This e-mail is already being used"
-                    default:
-                        errorMessage = "An unexpected error occured, please try again later"
-                    }
-                    self.alertiView.showMessage(AlertViewModel(title: "Error", message: errorMessage))
-                case .success: self.alertiView.showMessage(AlertViewModel(title: "Success", message: "Account has been created successfully"))
+                    guard let self = self else { return }
+                    self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
+                    switch result {
+                    case .failure(let error):
+                        var errorMessage: String!
+                        switch error {
+                        case .emailInUse:
+                            errorMessage = "This e-mail is already being used"
+                        default:
+                            errorMessage = "An unexpected error occured, please try again later"
+                        }
+                        self.alertiView.showMessage(AlertViewModel(title: "Error", message: errorMessage))
+                    case .success: self.alertiView.showMessage(AlertViewModel(title: "Success", message: "Account has been created successfully"))
+                }
                 }
             }
-        }
     }
 }
